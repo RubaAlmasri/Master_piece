@@ -105,61 +105,53 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
-                                aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users.html"
-                                aria-expanded="false">
-                                <i class="fa fa-users" aria-hidden="true"></i>
-                                <span class="hide-menu">Users</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="categories.html"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Categories</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="hotels.html"
-                                aria-expanded="false">
-                                <i class="fa fa-hotel" aria-hidden="true"></i>
-                                <span class="hide-menu">Hotels</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.html"
-                                aria-expanded="false">
-                                <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                <span class="hide-menu">Restaurants</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.html"
-                                aria-expanded="false">
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span class="hide-menu">Touristic places</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.html"
-                                aria-expanded="false">
-                                <i class="fa fa-comment" aria-hidden="true"></i>
-                                <span class="hide-menu">Comments</span>
-                            </a>
-                        </li>
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php" aria-expanded="false">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span class="hide-menu">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php" aria-expanded="false">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span class="hide-menu">Profile</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users.php" aria-expanded="false">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                    <span class="hide-menu">Users</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="categories.php" aria-expanded="false">
+                                    <i class="fa fa-table" aria-hidden="true"></i>
+                                    <span class="hide-menu">Categories</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="hotels.php" aria-expanded="false">
+                                    <i class="fa fa-hotel" aria-hidden="true"></i>
+                                    <span class="hide-menu">Hotels</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.php" aria-expanded="false">
+                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    <span class="hide-menu">Restaurants</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    <span class="hide-menu">Touristic places</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.php" aria-expanded="false">
+                                    <i class="fa fa-comment" aria-hidden="true"></i>
+                                    <span class="hide-menu">Comments</span>
+                                </a>
+                            </li>
                        
 
                     </ul>

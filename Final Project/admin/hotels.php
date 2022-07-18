@@ -11,7 +11,7 @@
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Categories</title>
+    <title>Hotels</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="shortcut icon" type="image/x-icon" href="../pages/images/Untitled design.png" />
@@ -111,62 +111,54 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
-                                aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users.html"
-                                aria-expanded="false">
-                                <i class="fa fa-users" aria-hidden="true"></i>
-                                <span class="hide-menu">Users</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="categories.html"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Categories</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="hotels.html"
-                                aria-expanded="false">
-                                <i class="fa fa-hotel" aria-hidden="true"></i>
-                                <span class="hide-menu">Hotels</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.html"
-                                aria-expanded="false">
-                                <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                <span class="hide-menu">Restaurants</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.html"
-                                aria-expanded="false">
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span class="hide-menu">Touristic places</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.html"
-                                aria-expanded="false">
-                                <i class="fa fa-comment" aria-hidden="true"></i>
-                                <span class="hide-menu">Comments</span>
-                            </a>
-                        </li>
-
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php" aria-expanded="false">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span class="hide-menu">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php" aria-expanded="false">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span class="hide-menu">Profile</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users.php" aria-expanded="false">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                    <span class="hide-menu">Users</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="categories.php" aria-expanded="false">
+                                    <i class="fa fa-table" aria-hidden="true"></i>
+                                    <span class="hide-menu">Categories</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="hotels.php" aria-expanded="false">
+                                    <i class="fa fa-hotel" aria-hidden="true"></i>
+                                    <span class="hide-menu">Hotels</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.php" aria-expanded="false">
+                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    <span class="hide-menu">Restaurants</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    <span class="hide-menu">Touristic places</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.php" aria-expanded="false">
+                                    <i class="fa fa-comment" aria-hidden="true"></i>
+                                    <span class="hide-menu">Comments</span>
+                                </a>
+                            </li>
+                       
 
                     </ul>
 
@@ -188,16 +180,16 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Restaurants</h4>
+                        <h4 class="page-title">Hotels</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
                                 <li><a href="#" class="fw-normal">Dashboard</a></li>
                             </ol>
-                            <a href=""
+                            <a href="add_hotel.php"
                                 class="btn btn-primary  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add
-                                Restaurant</a>
+                                Hotel</a>
                         </div>
                     </div>
                 </div>
@@ -270,12 +262,10 @@
                                             </td>
                                             <td>mar@gmail.com</td>
                                             <td>(03) 209 0790</td>
-                                            <td class="text-wrap">Tala Bay is planned to be fully self-sufficient from
-                                                an infrastructure point of view, providing a diverse range...</td>
+                                            <td class="text-wrap">Tala Bay is planned to be fully self-sufficient from an infrastructure point of view, providing a diverse range...</td>
                                             <td>Aqaba</td>
                                             <td><a href="https://goo.gl/maps/FbTV9nNqxffF8XyQ6" target="_blank"
-                                                    rel="noopener noreferrer">https://goo.gl/maps/FbTV9nNqxffF8XyQ6</a>
-                                            </td>
+                                                rel="noopener noreferrer">https://goo.gl/maps/FbTV9nNqxffF8XyQ6</a></td>
                                             <td>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
@@ -298,12 +288,10 @@
                                             </td>
                                             <td>kem@gmail.com</td>
                                             <td>(06) 520 0200</td>
-                                            <td class="text-wrap">This hotel is located in Shmeisani, Amman’s central
-                                                business district. It features a 24-hour gym, ...</td>
+                                            <td class="text-wrap">This hotel is located in Shmeisani, Amman’s central business district. It features a 24-hour gym, ...</td>
                                             <td>Amman</td>
                                             <td><a href="https://g.page/KempinskiAmman?share" target="_blank"
-                                                    rel="noopener noreferrer">https://g.page/KempinskiAmman?share</a>
-                                            </td>
+                                                rel="noopener noreferrer">https://g.page/KempinskiAmman?share</a></td>
                                             <td>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">

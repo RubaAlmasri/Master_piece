@@ -18,7 +18,6 @@
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -112,62 +111,54 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
-                                aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users.html"
-                                aria-expanded="false">
-                                <i class="fa fa-users" aria-hidden="true"></i>
-                                <span class="hide-menu">Users</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="categories.html"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Categories</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="hotels.html"
-                                aria-expanded="false">
-                                <i class="fa fa-hotel" aria-hidden="true"></i>
-                                <span class="hide-menu">Hotels</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.html"
-                                aria-expanded="false">
-                                <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                <span class="hide-menu">Restaurants</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.html"
-                                aria-expanded="false">
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span class="hide-menu">Touristic places</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.html"
-                                aria-expanded="false">
-                                <i class="fa fa-comment" aria-hidden="true"></i>
-                                <span class="hide-menu">Comments</span>
-                            </a>
-                        </li>
-                       
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php" aria-expanded="false">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span class="hide-menu">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php" aria-expanded="false">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span class="hide-menu">Profile</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users.php" aria-expanded="false">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                    <span class="hide-menu">Users</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="categories.php" aria-expanded="false">
+                                    <i class="fa fa-table" aria-hidden="true"></i>
+                                    <span class="hide-menu">Categories</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="hotels.php" aria-expanded="false">
+                                    <i class="fa fa-hotel" aria-hidden="true"></i>
+                                    <span class="hide-menu">Hotels</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.php" aria-expanded="false">
+                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    <span class="hide-menu">Restaurants</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    <span class="hide-menu">Touristic places</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.php" aria-expanded="false">
+                                    <i class="fa fa-comment" aria-hidden="true"></i>
+                                    <span class="hide-menu">Comments</span>
+                                </a>
+                            </li>
+
 
                     </ul>
 
@@ -189,16 +180,13 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Categories</h4>
+                        <h4 class="page-title">Comments</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
                                 <li><a href="#" class="fw-normal">Dashboard</a></li>
                             </ol>
-                            <a href=""
-                                class="btn btn-primary  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add
-                                Category</a>
                         </div>
                     </div>
                 </div>
@@ -223,87 +211,70 @@
                                         <tr>
                                             <th class="border-top-0 text-white">ID</th>
                                             <th class="border-top-0 text-white">Name</th>
-                                            <th class="border-top-0 text-white">Image</th>
+                                            <th class="border-top-0 text-white">Email</th>
+                                            <th class="border-top-0 text-white">Message</th>
                                             <th class="border-top-0 text-white">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td>Amman</td>
-                                            <td>
-                                                <img src="../pages/images/home/amman2.jpg" alt="Card image cap" width="50rem" height="50rem">
-                                            </td>
+                                            <td>Ahmad</td>
+                                            <td>mail@gmail.com</td>
+                                            <td class="text-wrap">The high-rise Mövenpick Hotel Amman is set in a
+                                                business district near government offices...</td>
                                             <td>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-success btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Edit'>Edit</button>
+                                                        data-toggle="tooltip" title='Edit'>Accept</button>
                                                 </form>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-danger btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Delete'>Delete</button>
+                                                        data-toggle="tooltip" title='Delete'>Ignore</button>
                                                 </form>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>2</td>
-                                            <td>Irbid</td>
-                                            <td>
-                                                <img src="../pages/images/home/irbid.jpg" alt="Card image cap" width="50rem" height="50rem">
-                                            </td>
+                                            <td>1</td>
+                                            <td>Ahmad</td>
+                                            <td>mail@gmail.com</td>
+                                            <td class="text-wrap">The high-rise Mövenpick Hotel Amman is set in a
+                                                business district near government offices...</td>
                                             <td>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-success btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Edit'>Edit</button>
+                                                        data-toggle="tooltip" title='Edit'>Accept</button>
                                                 </form>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-danger btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Delete'>Delete</button>
+                                                        data-toggle="tooltip" title='Delete'>Ignore</button>
                                                 </form>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>3</td>
-                                            <td>Ma'an</td>
-                                            <td>
-                                                <img src="../pages/images/home/maan.jfif" alt="Card image cap" width="50rem" height="50rem">
-                                            </td>
-                                            <td>
-                                                <form method="post" action="" class="d-inline">
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <button type="submit" class="btn btn-success btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Edit'>Edit</button>
-                                                </form>
-                                                <form method="post" action="" class="d-inline">
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <button type="submit" class="btn btn-danger btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Delete'>Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Ajloun</td>
-                                            <td>
-                                                <img src="../pages/images/home/ajloon.png" alt="Card image cap" width="50rem" height="50rem">
-                                            </td>
+                                            <td>1</td>
+                                            <td>Ahmad</td>
+                                            <td>mail@gmail.com</td>
+                                            <td class="text-wrap">The high-rise Mövenpick Hotel Amman is set in a
+                                                business district near government offices...</td>
                                             <td>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-success btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Edit'>Edit</button>
+                                                        data-toggle="tooltip" title='Edit'>Accept</button>
                                                 </form>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-danger btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Delete'>Delete</button>
+                                                        data-toggle="tooltip" title='Delete'>Ignore</button>
                                                 </form>
                                             </td>
                                         </tr>
+
                                     </tbody>
                                 </table>
                             </div>

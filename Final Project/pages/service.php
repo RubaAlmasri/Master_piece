@@ -9,7 +9,7 @@ include_once('./layout/header.php');
 			<div class="col-md-12">
 				<h2>Our Services</h2>
 				<ol class="breadcrumb header-bradcrumb justify-content-center">
-					<li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+					<li class="breadcrumb-item"><a href="index.php" class="text-white">Home</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Our Services</li>
 				</ol>
 			</div>
@@ -77,7 +77,7 @@ include_once('./layout/header.php');
 							</div>
 
 							<div class="content">
-								<h3><a href="single-post.html">Kempinski Hotel Ishtar Dead Sea</a></h3>
+								<h3><a href="single.php">Kempinski Hotel Ishtar Dead Sea</a></h3>
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo explicabo quos harum labore, adipisci natus.</p>
 								<a class="btn btn-main" href="single.php">See more</a>
 							</div>

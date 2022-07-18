@@ -59,10 +59,11 @@ Fixed Navigation
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item <?php if($page=='home'){echo 'active';} ?>">
-              <a class="nav-link" href="index.php">Home</a>
+              <a class="nav-link" href="index.php" style="font-size:1.0rem ;">Home</a>
             </li>
+            
             <li class="nav-item dropdown <?php if($page=='city'){echo 'active';} ?>">
-              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cities<i class="tf-ion-chevron-down"></i></a>
+              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:1.0rem ;">Cities<i class="tf-ion-chevron-down"></i></a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="service.php">Amman</a></li>
                 <li><a class="dropdown-item" href="service.php">Ma'an</a></li>
@@ -73,16 +74,19 @@ Fixed Navigation
             </li>
 
             <li class="nav-item <?php if($page=='about'){echo 'active';} ?>">
-              <a class="nav-link" href="about.php">About Us</a>
+              <a class="nav-link" href="about.php" style="font-size:1.0rem ;">About Us</a>
             </li>
             <li class="nav-item <?php if($page=='contact'){echo 'active';} ?>">
-              <a class="nav-link" href="contact.php">Contact Us</a>
+              <a class="nav-link" href="contact.php" style="font-size:1.0rem ;">Contact Us</a>
+            </li>
+            <li class="nav-item <?php if($page=='user'){echo 'active';} ?>">
+              <a class="nav-link" href="user_profile.php" style="font-size:1.0rem ;">Profile</a>
             </li>
             <li class="nav-item <?php if($page=='login'){echo 'active';} ?>">
-              <a class="nav-link" href="login.php">Login</a>
+              <a class="nav-link" href="login.php" style="font-size:1.0rem ;">Login</a>
             </li>
             <li class="nav-item <?php if($page=='register'){echo 'active';} ?>">
-              <a class="nav-link" href="register.php">Register</a>
+              <a class="nav-link" href="register.php" style="font-size:1.0rem ;">Register</a>
             </li>
 
           </ul>

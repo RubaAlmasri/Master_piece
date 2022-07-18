@@ -111,61 +111,53 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
-                                aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users.html"
-                                aria-expanded="false">
-                                <i class="fa fa-users" aria-hidden="true"></i>
-                                <span class="hide-menu">Users</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="categories.html"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Categories</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="hotels.html"
-                                aria-expanded="false">
-                                <i class="fa fa-hotel" aria-hidden="true"></i>
-                                <span class="hide-menu">Hotels</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.html"
-                                aria-expanded="false">
-                                <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                <span class="hide-menu">Restaurants</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.html"
-                                aria-expanded="false">
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span class="hide-menu">Touristic places</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.html"
-                                aria-expanded="false">
-                                <i class="fa fa-comment" aria-hidden="true"></i>
-                                <span class="hide-menu">Comments</span>
-                            </a>
-                        </li>
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php" aria-expanded="false">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span class="hide-menu">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php" aria-expanded="false">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span class="hide-menu">Profile</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users.php" aria-expanded="false">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                    <span class="hide-menu">Users</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="categories.php" aria-expanded="false">
+                                    <i class="fa fa-table" aria-hidden="true"></i>
+                                    <span class="hide-menu">Categories</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="hotels.php" aria-expanded="false">
+                                    <i class="fa fa-hotel" aria-hidden="true"></i>
+                                    <span class="hide-menu">Hotels</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.php" aria-expanded="false">
+                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    <span class="hide-menu">Restaurants</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    <span class="hide-menu">Touristic places</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.php" aria-expanded="false">
+                                    <i class="fa fa-comment" aria-hidden="true"></i>
+                                    <span class="hide-menu">Comments</span>
+                                </a>
+                            </li>
 
 
                     </ul>
@@ -188,13 +180,16 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Comments</h4>
+                        <h4 class="page-title">Restaurants</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
                                 <li><a href="#" class="fw-normal">Dashboard</a></li>
                             </ol>
+                            <a href=""
+                                class="btn btn-primary  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add
+                                Restaurant</a>
                         </div>
                     </div>
                 </div>
@@ -219,66 +214,98 @@
                                         <tr>
                                             <th class="border-top-0 text-white">ID</th>
                                             <th class="border-top-0 text-white">Name</th>
+                                            <th class="border-top-0 text-white">Image</th>
                                             <th class="border-top-0 text-white">Email</th>
-                                            <th class="border-top-0 text-white">Message</th>
+                                            <th class="border-top-0 text-white">Phone</th>
+                                            <th class="border-top-0 text-white">About</th>
+                                            <th class="border-top-0 text-white">City</th>
+                                            <th class="border-top-0 text-white">Location</th>
                                             <th class="border-top-0 text-white">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td>Ahmad</td>
-                                            <td>mail@gmail.com</td>
+                                            <td>Mövenpick Hotel Amman</td>
+                                            <td>
+                                                <img src="../pages/images/home/amman2.jpg" alt="Card image cap"
+                                                    width="50rem" height="50rem">
+                                            </td>
+                                            <td>mov@gmail.com</td>
+                                            <td>(06) 552 8822</td>
                                             <td class="text-wrap">The high-rise Mövenpick Hotel Amman is set in a
                                                 business district near government offices...</td>
+                                            <td>Amman</td>
+                                            <td>
+                                                <a href="https://g.page/MovenpickAmman?share" target="_blank"
+                                                    rel="noopener noreferrer">https://g.page/MovenpickAmman?share</a>
+                                            </td>
                                             <td>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-success btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Edit'>Accept</button>
+                                                        data-toggle="tooltip" title='Edit'>Edit</button>
                                                 </form>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-danger btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Delete'>Ignore</button>
+                                                        data-toggle="tooltip" title='Delete'>Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Ahmad</td>
-                                            <td>mail@gmail.com</td>
-                                            <td class="text-wrap">The high-rise Mövenpick Hotel Amman is set in a
-                                                business district near government offices...</td>
+                                            <td>2</td>
+                                            <td>Marina Plaza Hotel Tala Bay </td>
+                                            <td>
+                                                <img src="../pages/images/home/irbid.jpg" alt="Card image cap"
+                                                    width="50rem" height="50rem">
+                                            </td>
+                                            <td>mar@gmail.com</td>
+                                            <td>(03) 209 0790</td>
+                                            <td class="text-wrap">Tala Bay is planned to be fully self-sufficient from
+                                                an infrastructure point of view, providing a diverse range...</td>
+                                            <td>Aqaba</td>
+                                            <td><a href="https://goo.gl/maps/FbTV9nNqxffF8XyQ6" target="_blank"
+                                                    rel="noopener noreferrer">https://goo.gl/maps/FbTV9nNqxffF8XyQ6</a>
+                                            </td>
                                             <td>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-success btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Edit'>Accept</button>
+                                                        data-toggle="tooltip" title='Edit'>Edit</button>
                                                 </form>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-danger btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Delete'>Ignore</button>
+                                                        data-toggle="tooltip" title='Delete'>Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Ahmad</td>
-                                            <td>mail@gmail.com</td>
-                                            <td class="text-wrap">The high-rise Mövenpick Hotel Amman is set in a
-                                                business district near government offices...</td>
+                                            <td>3</td>
+                                            <td>Kempinski Hotel Amman</td>
+                                            <td>
+                                                <img src="../pages/images/home/maan.jfif" alt="Card image cap"
+                                                    width="50rem" height="50rem">
+                                            </td>
+                                            <td>kem@gmail.com</td>
+                                            <td>(06) 520 0200</td>
+                                            <td class="text-wrap">This hotel is located in Shmeisani, Amman’s central
+                                                business district. It features a 24-hour gym, ...</td>
+                                            <td>Amman</td>
+                                            <td><a href="https://g.page/KempinskiAmman?share" target="_blank"
+                                                    rel="noopener noreferrer">https://g.page/KempinskiAmman?share</a>
+                                            </td>
                                             <td>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-success btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Edit'>Accept</button>
+                                                        data-toggle="tooltip" title='Edit'>Edit</button>
                                                 </form>
                                                 <form method="post" action="" class="d-inline">
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-danger btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Delete'>Ignore</button>
+                                                        data-toggle="tooltip" title='Delete'>Delete</button>
                                                 </form>
                                             </td>
                                         </tr>

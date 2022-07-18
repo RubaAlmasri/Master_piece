@@ -9,7 +9,7 @@ include_once('./layout/header.php');
 			<div class="col-md-12">
 				<h2>About Us</h2>
 				<ol class="breadcrumb header-bradcrumb justify-content-center">
-					<li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+					<li class="breadcrumb-item"><a href="index.php" class="text-white">Home</a></li>
 					<li class="breadcrumb-item active" aria-current="page">About Us</li>
 				</ol>
 			</div>

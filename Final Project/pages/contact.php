@@ -10,7 +10,7 @@ include_once('./layout/header.php');
 			<div class="col-md-12">
 				<h2>Contact Us</h2>
 				<ol class="breadcrumb header-bradcrumb justify-content-center">
-					<li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+					<li class="breadcrumb-item"><a href="index.php" class="text-white">Home</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Contact Us</li>
 				</ol>
 			</div>
@@ -68,23 +68,23 @@ include_once('./layout/header.php');
 			<div class="contact-form col-md-6 ">
 				<form id="contact-form" method="post" role="form">
 					<div class="form-group mb-4">
-						<label for="name">Name: <span style="color: red;">*</span></label>
-						<input type="text" class="form-control" name="name" id="name" required>
+						<label for="name"><b>Name: <span style="color: red;">*</span></b></label>
+						<input type="text" class="form-control" name="name" id="name" title="Please fill out your name" required>
 					</div>
 
 					<div class="form-group mb-4">
-						<label for="email">Email: <span style="color: red;">*</span></label>
-						<input type="email" class="form-control" name="email" id="email" required>
+						<label for="email"><b>Email: <span style="color: red;">*</span></b></label>
+						<input type="email" class="form-control" name="email" id="email" title="Please fill out your email" required>
 					</div>
 
 					<div class="form-group mb-4">
-						<label for="subject">Subject: <span style="color: red;">*</span></label>
-						<input type="text" class="form-control" name="subject" id="subject" required>
+						<label for="subject"><b>Subject: <span style="color: red;">*</span></b></label>
+						<input type="text" class="form-control" name="subject" id="subject" title="Please fill out the subject" required>
 					</div>
 
 					<div class="form-group mb-4">
-						<label for="message">Message: <span style="color: red;">*</span></label>
-						<textarea rows="6" class="form-control" name="message" id="message" required></textarea>
+						<label for="message"><b>Message: <span style="color: red;">*</span></b></label>
+						<textarea rows="6" class="form-control" name="message" id="message" title="Please fill out your message" required></textarea>
 					</div>
 					<div id="cf-submit">
 					<button type="submit" value="send" class="btn btn-main">Send Message</button>

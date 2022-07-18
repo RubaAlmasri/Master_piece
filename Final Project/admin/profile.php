@@ -5,19 +5,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
         content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Categories</title>
+    <title>Profile</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="shortcut icon" type="image/x-icon" href="../pages/images/Untitled design.png" />
     <!-- Custom CSS -->
-    <link href="css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="css/style.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,6 +28,7 @@
 </head>
 
 <body>
+   
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
@@ -36,7 +37,7 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <header class="topbar" data-navbarbg="skin5">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark bg-dark">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin6">
                     <!-- ============================================================== -->
                     <!-- Logo -->
@@ -60,7 +61,7 @@
                 <!-- ============================================================== -->
                 <!-- End Logo -->
                 <!-- ============================================================== -->
-                <div class="navbar-collapse collapse bg-dark" id="navbarSupportedContent" data-navbarbg="skin5">
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
                     <ul class="navbar-nav d-none d-md-block d-lg-none">
                         <li class="nav-item">
                             <a class="nav-toggler nav-link waves-effect waves-light text-white"
@@ -88,8 +89,8 @@
                         <!-- ============================================================== -->
                         <li>
                             <a class="profile-pic" href="#">
-                                <img src="plugins/images/users/2.png" alt="user-img" width="36" class="img-circle"><span
-                                    class="text-white font-medium">Ruba</span></a>
+                                <img src="plugins/images/users/2.png" alt="user-img" width="36"
+                                    class="img-circle"><span class="text-white font-medium">Ruba</span></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -112,62 +113,54 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
-                                aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users.html"
-                                aria-expanded="false">
-                                <i class="fa fa-users" aria-hidden="true"></i>
-                                <span class="hide-menu">Users</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="categories.html"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Categories</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="hotels.html"
-                                aria-expanded="false">
-                                <i class="fa fa-hotel" aria-hidden="true"></i>
-                                <span class="hide-menu">Hotels</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.html"
-                                aria-expanded="false">
-                                <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                <span class="hide-menu">Restaurants</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.html"
-                                aria-expanded="false">
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span class="hide-menu">Touristic places</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.html"
-                                aria-expanded="false">
-                                <i class="fa fa-comment" aria-hidden="true"></i>
-                                <span class="hide-menu">Comments</span>
-                            </a>
-                        </li>
-
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php" aria-expanded="false">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span class="hide-menu">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php" aria-expanded="false">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span class="hide-menu">Profile</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users.php" aria-expanded="false">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                    <span class="hide-menu">Users</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="categories.php" aria-expanded="false">
+                                    <i class="fa fa-table" aria-hidden="true"></i>
+                                    <span class="hide-menu">Categories</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="hotels.php" aria-expanded="false">
+                                    <i class="fa fa-hotel" aria-hidden="true"></i>
+                                    <span class="hide-menu">Hotels</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.php" aria-expanded="false">
+                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    <span class="hide-menu">Restaurants</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    <span class="hide-menu">Touristic places</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.php" aria-expanded="false">
+                                    <i class="fa fa-comment" aria-hidden="true"></i>
+                                    <span class="hide-menu">Comments</span>
+                                </a>
+                            </li>
+                       
 
                     </ul>
 
@@ -189,13 +182,14 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Users</h4>
+                        <h4 class="page-title">Profile page</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
                                 <li><a href="#" class="fw-normal">Dashboard</a></li>
                             </ol>
+                           
                         </div>
                     </div>
                 </div>
@@ -211,94 +205,71 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+                <!-- Row -->
                 <div class="row">
-                    <div class="col-sm-12">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-12">
                         <div class="white-box">
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead class="bg-dark">
-                                        <tr>
-                                            <th class="border-top-0 text-white">ID</th>
-                                            <th class="border-top-0 text-white">Name</th>
-                                            <th class="border-top-0 text-white">Email</th>
-                                            <th class="border-top-0 text-white">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Ruba</td>
-                                            <td>ruba@gmail.com</td>
-                                            <td>
-                                                <form method="post" action="" class="d-inline">
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <button type="submit" class="btn btn-success btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Edit'>Edit</button>
-                                                </form>
-                                                <form method="post" action="" class="d-inline">
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <button type="submit" class="btn btn-danger btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Delete'>Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Haneen</td>
-                                            <td>haneen@gmail.com</td>
-                                            <td>
-                                                <form method="post" action="" class="d-inline">
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <button type="submit" class="btn btn-success btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Edit'>Edit</button>
-                                                </form>
-                                                <form method="post" action="" class="d-inline">
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <button type="submit" class="btn btn-danger btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Delete'>Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Omar</td>
-                                            <td>omar@gmail.com</td>
-                                            <td>
-                                                <form method="post" action="" class="d-inline">
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <button type="submit" class="btn btn-success btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Edit'>Edit</button>
-                                                </form>
-                                                <form method="post" action="" class="d-inline">
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <button type="submit" class="btn btn-danger btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Delete'>Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Anas</td>
-                                            <td>anas@gmail.com</td>
-                                            <td>
-                                                <form method="post" action="" class="d-inline">
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <button type="submit" class="btn btn-success btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Edit'>Edit</button>
-                                                </form>
-                                                <form method="post" action="" class="d-inline">
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <button type="submit" class="btn btn-danger btn-flat show_confirm"
-                                                        data-toggle="tooltip" title='Delete'>Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="user-bg"> <img width="100%" alt="user" src="plugins/images/large/img1.jpg">
+                                <div class="overlay-box">
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="plugins/images/users/2.png"
+                                                class="thumb-lg img-circle" alt="img"></a>
+                                        <h4 class="text-white mt-2">Ruba Almasri</h4>
+                                        <h5 class="text-white mt-2">ruba@gmail.com</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-horizontal form-material">
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Full Name</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" placeholder="Ruba Almasri"
+                                                class="form-control p-0 border-0"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="example-email" class="col-md-12 p-0">Email</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="email" placeholder="ruba@gmail.com"
+                                                class="form-control p-0 border-0" name="example-email"
+                                                id="example-email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Password</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="password" value="password" class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Phone No.</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" placeholder="+962 77 809 191 7"
+                                                class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group mb-4">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success">Update Profile</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                    <!-- Column -->
                 </div>
+                <!-- Row -->
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
