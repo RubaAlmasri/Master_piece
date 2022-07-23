@@ -1,6 +1,7 @@
 <?php
 include_once '../pages/connect/connect.php';
 session_start();
+$id=$_SESSION["admin_id"] ?? 1;
 try {
 
     $id = $_GET['id'];
@@ -10,6 +11,8 @@ try {
     $statement->bindValue(':id', $id);
     $statement->execute();
     $category = $statement->fetch(PDO::FETCH_ASSOC);
+
+    if($id){
 ?>
 
 
@@ -54,7 +57,7 @@ try {
                         <!-- ============================================================== -->
                         <!-- Logo -->
                         <!-- ============================================================== -->
-                        <a class="navbar-brand" href="dashboard.html">
+                        <a class="navbar-brand" href="dashboard.php">
                             <!-- Logo text -->
                             <span class="logo-text">
                                 <!-- dark Logo text -->
@@ -86,20 +89,20 @@ try {
                             <!-- ============================================================== -->
                             <!-- Search -->
                             <!-- ============================================================== -->
-                            <li class=" in">
+                            <!-- <li class=" in">
                                 <form role="search" class="app-search d-none d-md-block me-3">
                                     <input type="text" placeholder="Search..." class="form-control mt-0">
                                     <a href="" class="active">
                                         <i class="fa fa-search"></i>
                                     </a>
                                 </form>
-                            </li>
+                            </li> -->
                             <!-- ============================================================== -->
                             <!-- User profile and search -->
                             <!-- ============================================================== -->
                             <li>
-                                <a class="profile-pic" href="#">
-                                    <img src="plugins/images/users/2.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium">Ruba</span></a>
+                                <a class="profile-pic" href="profile.php">
+                                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium">Ruba</span></a>
                             </li>
                             <!-- ============================================================== -->
                             <!-- User profile and search -->
@@ -151,12 +154,7 @@ try {
                                     <span class="hide-menu">Hotels</span>
                                 </a>
                             </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.php" aria-expanded="false">
-                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                    <span class="hide-menu">Restaurants</span>
-                                </a>
-                            </li>
+                            
                             <li class="sidebar-item">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -196,7 +194,7 @@ try {
                         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                             <div class="d-md-flex">
                                 <ol class="breadcrumb ms-auto">
-                                    <li><a href="#" class="fw-normal">Dashboard</a></li>
+                                    <li><a href="dashboard.php" class="fw-normal">Dashboard</a></li>
                                 </ol>
                             </div>
                         </div>
@@ -230,18 +228,18 @@ try {
                                                 <form action="update.php" method="post" enctype="multipart/form-data">
                                                     <div class="form-outline form-white mb-4" style="text-align: left;">
                                                         <label for="category_name"><b>Category Name:</b> <span style="color: red;">*</span></label>
-                                                        <input name="category_name" type="text" id="category_name" value='<?php echo $category['category_name']; ?>' class="form-control" required />
+                                                        <input name="category_name" type="text" id="category_name" value="<?php echo $category['category_name']; ?>" class="form-control" required />
                                                     </div>
                                                     <div class="form-outline form-white mb-4" style="text-align: left;">
                                                         <label for="category_about"><b>Category About:</b> <span style="color: red;">*</span></label>
                                                         <textarea rows="5" class="form-control" name="category_about" id="category_about" required><?php echo $category['category_about']; ?></textarea>
                                                     </div>
                                                     <div class="form-outline form-white mb-4" style="text-align: left;">
-                                                        <label for="file"><b>Category Image:</b> <span style="color: red;">*</span></label>
+                                                        <label for="file"><b>Category Image:</b></label>
                                                         <input type="file" class="form-control-file form-control" value='<?php echo $category['category_img']; ?>' id="file" name="file" accept="image/*">
                                                     </div>
                                                     <input name="id" type="hidden" id="id" value='<?php echo $id; ?>' class="form-control" />
-                                                    <button type="submit" value="save" name="update" class="btn btn-primary mt-3">Update</button>
+                                                    <button type="submit" value="update" name="update" class="btn btn-primary mt-3">Update</button>
                                             </div>
                                             </form>
                                         </div>
@@ -296,6 +294,10 @@ try {
     </html>
 
 <?php
+ }
+ else{
+     header("location:404.html");
+ }
 } catch (PDOException $e) {
     echo $query . "<br>" . $e->getMessage();
 } finally {

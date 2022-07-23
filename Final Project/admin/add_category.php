@@ -46,7 +46,7 @@ try {
                         <!-- ============================================================== -->
                         <!-- Logo -->
                         <!-- ============================================================== -->
-                        <a class="navbar-brand" href="dashboard.html">
+                        <a class="navbar-brand" href="dashboard.php">
                             <!-- Logo text -->
                             <span class="logo-text">
                                 <!-- dark Logo text -->
@@ -78,14 +78,7 @@ try {
                             <!-- ============================================================== -->
                             <!-- Search -->
                             <!-- ============================================================== -->
-                            <li class=" in">
-                                <form role="search" class="app-search d-none d-md-block me-3">
-                                    <input type="text" placeholder="Search..." class="form-control mt-0">
-                                    <a href="" class="active">
-                                        <i class="fa fa-search"></i>
-                                    </a>
-                                </form>
-                            </li>
+                            
                             <!-- ============================================================== -->
                             <!-- User profile and search -->
                             <!-- ============================================================== -->
@@ -143,12 +136,7 @@ try {
                                     <span class="hide-menu">Hotels</span>
                                 </a>
                             </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.php" aria-expanded="false">
-                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                    <span class="hide-menu">Restaurants</span>
-                                </a>
-                            </li>
+                            
                             <li class="sidebar-item">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -188,7 +176,7 @@ try {
                         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                             <div class="d-md-flex">
                                 <ol class="breadcrumb ms-auto">
-                                    <li><a href="#" class="fw-normal">Dashboard</a></li>
+                                    <li><a href="dashboard.php" class="fw-normal">Dashboard</a></li>
                                 </ol>
                                
                             </div>

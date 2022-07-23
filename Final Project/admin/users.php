@@ -2,11 +2,15 @@
 include_once '../pages/connect/connect.php';
 session_start();
 
+$id=$_SESSION["admin_id"] ?? 1;
+
 try {
     $query = "SELECT * FROM users";
     $statement = $conn->prepare($query);
     $statement->execute();
     $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    if($id){
 ?>
 
 
@@ -55,7 +59,7 @@ try {
                         <!-- ============================================================== -->
                         <!-- Logo -->
                         <!-- ============================================================== -->
-                        <a class="navbar-brand" href="dashboard.html">
+                        <a class="navbar-brand" href="dashboard.php">
                             <!-- Logo text -->
                             <span class="logo-text">
                                 <!-- dark Logo text -->
@@ -99,8 +103,8 @@ try {
                             <!-- User profile and search -->
                             <!-- ============================================================== -->
                             <li>
-                                <a class="profile-pic" href="#">
-                                    <img src="plugins/images/users/2.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium">Ruba</span></a>
+                                <a class="profile-pic" href="profile.php">
+                                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium">Ruba</span></a>
                             </li>
                             <!-- ============================================================== -->
                             <!-- User profile and search -->
@@ -152,12 +156,7 @@ try {
                                     <span class="hide-menu">Hotels</span>
                                 </a>
                             </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="restaurants.php" aria-expanded="false">
-                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                    <span class="hide-menu">Restaurants</span>
-                                </a>
-                            </li>
+
                             <li class="sidebar-item">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -197,8 +196,10 @@ try {
                         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                             <div class="d-md-flex">
                                 <ol class="breadcrumb ms-auto">
-                                    <li><a href="#" class="fw-normal">Dashboard</a></li>
+                                    <li><a href="dashboard.php" class="fw-normal">Dashboard</a></li>
                                 </ol>
+                                <a href="add_user.php" class="btn btn-primary  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add User
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -207,6 +208,16 @@ try {
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
+                <?php
+                if (isset($_SESSION['status1'])) { ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php
+                        echo $_SESSION['status1'];
+                        unset($_SESSION['status1']);
+                        ?>
+                    </div>
+                <?php
+                } ?>
                 <?php
                 if (isset($_SESSION['status4'])) { ?>
                     <div class="alert alert-success" role="alert">
@@ -331,6 +342,10 @@ try {
     </html>
 
 <?php
+ }
+ else{
+     header("location:404.html");
+ }
 } catch (PDOException $e) {
     echo $query . "<br>" . $e->getMessage();
 } finally {

@@ -1,15 +1,10 @@
 <?php
-include_once './connect/connect.php';
+// include_once './connect/connect.php';
 $page = 'home';
 include_once('./layout/header.php');
 
 
-
 try {
-	$query = "SELECT * FROM categories";
-	$statement = $conn->prepare($query);
-	$statement->execute();
-	$categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 	<div class="hero-slider">
 		<div class="slider-item th-fullpage hero-area" style="background-image: url(images/slider/wadirum.webp);">
@@ -57,7 +52,7 @@ Start About Section
 				<div class="col-lg-6">
 					<!-- section title -->
 					<div class="title text-center">
-						<h2>Categories</h2>
+						<h2>Cities</h2>
 						<div class="border"></div>
 					</div>
 					<!-- /section title -->
@@ -66,69 +61,21 @@ Start About Section
 			<div class="row">
 				<div class="col-md-12">
 					<div class="row text-center">
-					<?php foreach ($categories as $i) { ?>
-						<div class="col-lg-4 col-md-6 col-sm-6">
+						<?php foreach ($categories as $i) { ?>
+							<div class="col-lg-4 col-md-6 col-sm-6">
 
-							<div class="card" style="width: 18rem; margin-bottom: 5%;">
-								<img class="card-img-top" src="images/home/amman2.jpg" alt="Card image cap" width="100%" height="200rem">
-								<div class="card-body">
-									<h5 class="card-title"><a><?php echo $i['category_name']; ?></a></h5>
+								<div class="card" style="width: 18rem; margin-bottom: 5%;">
+									<a href="sub_categories.php?category_id=<?php echo $i['category_id'] ?>&category_name=<?php echo $i["category_name"] ?>">
+									<img class="card-img-top" src="../admin/images/<?php echo $i['category_img']; ?>" alt="Card image cap" width="100%" height="200rem">
+									</a>
+									<div class="card-body">
+										<h5 class="card-title"><a href="sub_categories.php?category_id=<?php echo $i['category_id'] ?>&category_name=<?php echo $i["category_name"] ?>" style="color: black;" onMouseOver="this.style.color='#28ABE3'" onMouseOut="this.style.color='black'"><?php echo $i['category_name']; ?></a></h5>
 
+									</div>
 								</div>
 							</div>
-						</div>
 						<?php } ?>
-						<div class="col-lg-4 col-md-6 col-sm-6">
 
-							<div class="card" style="width: 18rem; margin-bottom: 5%;">
-								<img class="card-img-top" src="images/home/maan.jfif" alt="Card image cap" width="100%" height="200rem">
-								<div class="card-body">
-									<h5 class="card-title">Ma'an</h5>
-
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-sm-6">
-
-							<div class="card" style="width: 18rem; margin-bottom: 5%;">
-								<img class="card-img-top" src="images/home/Jerash.jpg" alt="Card image cap" width="100%" height="200rem">
-								<div class="card-body">
-									<h5 class="card-title">Jerash</h5>
-
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-sm-6">
-
-							<div class="card" style="width: 18rem; margin-bottom: 5%;">
-								<img class="card-img-top" src="images/home/irbid.jpg" alt="Card image cap" width="100%" height="200rem">
-								<div class="card-body">
-									<h5 class="card-title">Irbid</h5>
-
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-sm-6">
-
-							<div class="card" style="width: 18rem; margin-bottom: 5%;">
-								<img class="card-img-top" src="images/home/Ajloun.webp" alt="Card image cap" width="100%" height="200rem">
-								<div class="card-body">
-									<h5 class="card-title">Ajloun</h5>
-
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6 col-sm-6">
-
-							<div class="card" style="width: 18rem; margin-bottom: 5%;">
-								<img class="card-img-top" src="images/home/Ajloun.webp" alt="Card image cap" width="100%" height="200rem">
-								<div class="card-body">
-									<h5 class="card-title">Ajloun</h5>
-
-								</div>
-							</div>
-						</div>
 						<!-- END COL -->
 					</div>
 				</div>
@@ -165,7 +112,7 @@ Start latest Section
 				<!-- section title -->
 				<div class="col-xl-6 col-lg-8">
 					<div class="title text-center ">
-						<h2> Latest <span class="color">Hotels & Restaurants</span></h2>
+						<h2> Latest <span class="color">Hotels</span></h2>
 						<div class="border"></div>
 					</div>
 				</div>
@@ -222,7 +169,9 @@ Start latest Section
 				<!-- end single blog post -->
 			</div> <!-- end row -->
 		</div> <!-- end container -->
-	</section> <!-- end section -->
+	</section>
+	<!-- end section -->
+
 
 <?php
 
