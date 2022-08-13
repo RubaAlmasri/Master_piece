@@ -1,8 +1,8 @@
 <?php
 include_once('./layout/header.php');
 
-$user_id = $_SESSION['id'] ?? 1;
-$user_name = $_SESSION['name'] ?? "ruba";
+$user_id = $_SESSION['id'] ?? null;
+$user_name = $_SESSION['name'] ?? null;
 ?>
 <!--
 End Fixed Navigation

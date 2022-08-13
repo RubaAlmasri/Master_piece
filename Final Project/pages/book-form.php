@@ -68,15 +68,15 @@ $user = $_SESSION['id'] ?? 5;
                         </div>
                         <div class="col-lg-12 col-md-12">
                             <label for="no_rooms"><b>Number of Rooms: <span style="color: red;">*</span></b></label>
-                            <input type="number" name="no_rooms" class="form-control" id="no_rooms" required>
+                            <input type="number" min="1" name="no_rooms" class="form-control" id="no_rooms" required>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <label for="adult"><b>Adult per Room: <span style="color: red;">*</span></b></label>
-                            <input type="number" name="adult" class="form-control" id="adult" required>
+                            <input type="number" min="0" name="adult" class="form-control" id="adult" required>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <label for="Child"><b>Child per Room: <span style="color: red;">*</span></b></label>
-                            <input type="number" name="Child" class="form-control" id="Child" required>
+                            <input type="number" min="0" name="Child" class="form-control" id="Child" required>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <label for="check-in"><b>Check-in: <span style="color: red;">*</span></b></label>
@@ -89,7 +89,7 @@ $user = $_SESSION['id'] ?? 5;
                 <?php }
                 } ?>
             </div>
-            <button type="submit" value="send" class="btn btn-main">Send Message</button>
+            <button type="submit" value="send" class="btn btn-main">Submit</button>
         </form>
     </div>
 <?php } else { 

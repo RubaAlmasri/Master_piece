@@ -21,7 +21,7 @@ include_once('./layout/header.php');
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 mt-20">
-				<h2 class="mb-3">We Create Designs<br> and technology</h2>
+				<h2 class="mb-3">About us<br> </h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat voluptate molestias, quaerat quo natus
 					dolor harum voluptatibus modi dicta ducimus.</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum quae officia earum dolore est quaerat
@@ -31,7 +31,7 @@ include_once('./layout/header.php');
 				</p>
 			</div>
 			<div class="col-lg-6 mt-4 mt-lg-0">
-				<img loading="lazy" class="img-fluid" src="images/company/company-image.jpg" alt="">
+				<img loading="lazy" class="img-fluid" src="images/Untitled design.png" alt="" style="width: 150%; height: 70%;">
 			</div>
 		</div>
 	</div>
@@ -67,7 +67,7 @@ include_once('./layout/header.php');
 <!--
 Start Call To Action
 ==================================== -->
-<section class="call-to-action-2 section"  style='background: url("images/contact.jpg");background-repeat: no-repeat;  background-size: 100%;'>
+<!-- <section class="call-to-action-2 section"  style='background: url("images/contact.jpg");background-repeat: no-repeat;  background-size: 100%;'>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center">
@@ -78,7 +78,7 @@ Start Call To Action
 			</div>
 		</div> 		
 	</div>   	
-</section> 
+</section>  -->
   <!-- End section -->
 
 
@@ -87,26 +87,26 @@ Start Call To Action
 		=========================================== -->
 <section class="team" id="team">
 	<div class="container">
-		<div class="row justify-content-center">
-			<!-- section title -->
+		<!-- <div class="row justify-content-center">
+			
 			<div class="col-xl-6 col-lg-8">
 				<div class="title text-center ">
 					<h2>Our Team</h2>
 					<div class="border"></div>
 				</div>
 			</div>
-			<!-- /section title -->
+			
 		</div>
 		<div class="row">
-			<!-- team member -->
+			
 			<div class="col-lg-4 col-md-6">
 				<div class="team-member text-center">
 					<div class="member-photo">
-						<!-- member photo -->
+						
 						<img loading="lazy" class="img-fluid" src="images/team/member-1.jpg" alt="Meghna">
-						<!-- /member photo -->
+						
 
-						<!-- member social profile -->
+						
 						<div class="mask">
 							<ul class="clearfix">
 								<li><a href="https://themefisher.com/"><i class="tf-ion-social-facebook"></i></a></li>
@@ -115,30 +115,25 @@ Start Call To Action
 								<li><a href="https://themefisher.com/"><i class="tf-ion-social-dribbble"></i></a></li>
 							</ul>
 						</div>
-						<!-- /member social profile -->
+						
 					</div>
 
-					<!-- member name & designation -->
 					<div class="member-content">
 						<h3>Michael Jonson</h3>
 						<span>Head Of Marketing</span>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.</p>
 					</div>
-					<!-- /member name & designation -->
+					
 
 				</div>
 			</div>
-			<!-- end team member -->
-
-			<!-- team member -->
+			
 			<div class="col-lg-4 col-md-6">
 				<div class="team-member text-center">
 					<div class="member-photo">
-						<!-- member photo -->
+						
 						<img loading="lazy" class="img-fluid" src="images/team/member-2.jpg" alt="Meghna">
-						<!-- /member photo -->
-
-						<!-- member social profile -->
+						
 						<div class="mask">
 							<ul class="clearfix">
 								<li><a href="https://themefisher.com/"><i class="tf-ion-social-facebook"></i></a></li>
@@ -147,29 +142,25 @@ Start Call To Action
 								<li><a href="https://themefisher.com/"><i class="tf-ion-social-dribbble"></i></a></li>
 							</ul>
 						</div>
-						<!-- /member social profile -->
+						
 					</div>
 
-					<!-- member name & designation -->
+					
 					<div class="member-content">
 						<h3>Carrick Mollenkamp</h3>
 						<span>Web Developer</span>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.</p>
 					</div>
-					<!-- /member name & designation -->
+					
 				</div>
 			</div>
-			<!-- end team member -->
-
-			<!-- team member -->
+			
 			<div class="col-lg-4 col-md-6">
 				<div class="team-member text-center">
 					<div class="member-photo">
-						<!-- member photo -->
-						<img loading="lazy" class="img-fluid" src="images/team/member-3.jpg" alt="Meghna">
-						<!-- /member photo -->
 
-						<!-- member social profile -->
+					<img loading="lazy" class="img-fluid" src="images/team/member-3.jpg" alt="Meghna">
+						
 						<div class="mask">
 							<ul class="clearfix">
 								<li><a href="https://themefisher.com/"><i class="tf-ion-social-facebook"></i></a></li>
@@ -178,23 +169,21 @@ Start Call To Action
 								<li><a href="https://themefisher.com/"><i class="tf-ion-social-dribbble"></i></a></li>
 							</ul>
 						</div>
-						<!-- /member social profile -->
+						
 					</div>
 
-					<!-- member name & designation -->
+					
 					<div class="member-content">
 						<h3>David Gauthier</h3>
 						<span>Head Of Management</span>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.</p>
 					</div>
-					<!-- /member name & designation -->
 
 				</div>
 			</div>
-			<!-- end team member -->
-		</div> <!-- End row -->
-	</div> <!-- End container -->
-</section> <!-- End section -->
+		</div>  -->
+	</div> 
+</section> 
 
 
 <?php

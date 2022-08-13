@@ -4,6 +4,27 @@ session_start();
 $id = $_SESSION["admin_id"] ?? 1;
 
 try {
+    $query = "SELECT * FROM users";
+    $statement = $conn->prepare($query);
+    $statement->execute();
+    $users = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    $query = "SELECT * FROM hotels";
+    $statement = $conn->prepare($query);
+    $statement->execute();
+    $hotels = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    $query = "SELECT * FROM touristic_places";
+    $statement = $conn->prepare($query);
+    $statement->execute();
+    $places = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    $query = "SELECT * FROM users ORDER BY user_id desc limit 4";
+    $statement = $conn->prepare($query);
+    $statement->execute();
+    $userss = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
     if ($id) {
 ?>
 
@@ -49,7 +70,7 @@ try {
                             <!-- ============================================================== -->
                             <!-- Logo -->
                             <!-- ============================================================== -->
-                            <a class="navbar-brand" href="dashboard.html">
+                            <a class="navbar-brand" href="dashboard.php">
                                 <!-- Logo text -->
                                 <span class="logo-text">
                                     <!-- dark Logo text -->
@@ -146,7 +167,7 @@ try {
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        <span class="hide-menu">Touristic places</span>
+                                        <span class="hide-menu">Tourist places</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
@@ -182,7 +203,7 @@ try {
                             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                                 <div class="d-md-flex">
                                     <ol class="breadcrumb ms-auto">
-                                        <li><a href="#" class="fw-normal">Dashboard</a></li>
+                                        <li><a href="dashboard.php" class="fw-normal">Dashboard</a></li>
                                     </ol>
 
                                 </div>
@@ -203,37 +224,38 @@ try {
                         <div class="row justify-content-center">
                             <div class="col-lg-4 col-md-12">
                                 <div class="white-box analytics-info">
-                                    <h3 class="box-title">Total Visit</h3>
+                                    <h3 class="box-title">Users</h3>
                                     <ul class="list-inline two-part d-flex align-items-center mb-0">
                                         <li>
                                             <div id="sparklinedash"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                             </div>
                                         </li>
-                                        <li class="ms-auto"><span class="counter text-success">659</span></li>
+                                        <li class="ms-auto"><span class="counter text-success"><?php echo count($users); ?></span></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-12">
                                 <div class="white-box analytics-info">
-                                    <h3 class="box-title">Total Page Views</h3>
+                                    <h3 class="box-title">Hotels</h3>
                                     <ul class="list-inline two-part d-flex align-items-center mb-0">
                                         <li>
                                             <div id="sparklinedash2"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                             </div>
                                         </li>
-                                        <li class="ms-auto"><span class="counter text-purple">869</span></li>
+                                        <li class="ms-auto"><span class="counter text-purple"><?php echo count($hotels); ?></span></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-12">
                                 <div class="white-box analytics-info">
-                                    <h3 class="box-title">Unique Visitor</h3>
+                                    <h3 class="box-title">Tourist Places</h3>
                                     <ul class="list-inline two-part d-flex align-items-center mb-0">
                                         <li>
                                             <div id="sparklinedash3"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                             </div>
                                         </li>
-                                        <li class="ms-auto"><span class="counter text-info">911</span>
+                                        <li class="ms-auto">
+                                            <span class="counter text-info"><?php echo count($places); ?></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -242,7 +264,7 @@ try {
                         <!-- ============================================================== -->
                         <!-- PRODUCTS YEARLY SALES -->
                         <!-- ============================================================== -->
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                                 <div class="white-box">
                                     <h3 class="box-title">Products Yearly Sales</h3>
@@ -262,16 +284,16 @@ try {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- ============================================================== -->
-                        <!-- RECENT SALES -->
+                        <!-- RECENT users -->
                         <!-- ============================================================== -->
                         <div class="row">
                             <div class="col-md-12 col-lg-12 col-sm-12">
                                 <div class="white-box">
                                     <div class="d-md-flex mb-3">
-                                        <h3 class="box-title mb-0">Recent sales</h3>
-                                        <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                                        <h3 class="box-title mb-0">Recent users</h3>
+                                        <!-- <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
                                             <select class="form-select shadow-none row border-top">
                                                 <option>March 2021</option>
                                                 <option>April 2021</option>
@@ -279,69 +301,27 @@ try {
                                                 <option>June 2021</option>
                                                 <option>July 2021</option>
                                             </select>
-                                        </div>
+                                        </div> -->
                                     </div>
-                                    <div class="table-responsive">
+                                    <div class="table-responsive text-center">
                                         <table class="table no-wrap">
-                                            <thead>
+                                            <thead class="bg-dark">
                                                 <tr>
-                                                    <th class="border-top-0">#</th>
-                                                    <th class="border-top-0">Name</th>
-                                                    <th class="border-top-0">Status</th>
-                                                    <th class="border-top-0">Date</th>
-                                                    <th class="border-top-0">Price</th>
+                                                    <th class="border-top-0 text-white">#</th>
+                                                    <th class="border-top-0 text-white">Name</th>
+                                                    <th class="border-top-0 text-white">Email</th>
+                                                    <th class="border-top-0 text-white">Phone</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td class="txt-oflo">Elite admin</td>
-                                                    <td>SALE</td>
-                                                    <td class="txt-oflo">April 18, 2021</td>
-                                                    <td><span class="text-success">$24</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td class="txt-oflo">Real Homes WP Theme</td>
-                                                    <td>EXTENDED</td>
-                                                    <td class="txt-oflo">April 19, 2021</td>
-                                                    <td><span class="text-info">$1250</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td class="txt-oflo">Ample Admin</td>
-                                                    <td>EXTENDED</td>
-                                                    <td class="txt-oflo">April 19, 2021</td>
-                                                    <td><span class="text-info">$1250</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td class="txt-oflo">Medical Pro WP Theme</td>
-                                                    <td>TAX</td>
-                                                    <td class="txt-oflo">April 20, 2021</td>
-                                                    <td><span class="text-danger">-$24</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>5</td>
-                                                    <td class="txt-oflo">Hosting press html</td>
-                                                    <td>SALE</td>
-                                                    <td class="txt-oflo">April 21, 2021</td>
-                                                    <td><span class="text-success">$24</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>6</td>
-                                                    <td class="txt-oflo">Digital Agency PSD</td>
-                                                    <td>SALE</td>
-                                                    <td class="txt-oflo">April 23, 2021</td>
-                                                    <td><span class="text-danger">-$14</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>7</td>
-                                                    <td class="txt-oflo">Helping Hands WP Theme</td>
-                                                    <td>MEMBER</td>
-                                                    <td class="txt-oflo">April 22, 2021</td>
-                                                    <td><span class="text-success">$64</span></td>
-                                                </tr>
+                                                <?php foreach ($userss as $i) { ?>
+                                                    <tr>
+                                                        <td><?php echo $i['user_id']; ?></td>
+                                                        <td><?php echo $i['user_name']; ?></td>
+                                                        <td><?php echo $i['user_email']; ?></td>
+                                                        <td><?php echo $i['user_phone']; ?></td>
+                                                    </tr>
+                                                <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -353,13 +333,12 @@ try {
                         <!-- ============================================================== -->
                         <div class="row">
                             <!-- .col -->
-                            <div class="col-md-12 col-lg-8 col-sm-12">
+                            <!-- <div class="col-md-12 col-lg-12 col-sm-12">
                                 <div class="card white-box p-0">
                                     <div class="card-body">
                                         <h3 class="box-title mb-0">Recent Comments</h3>
                                     </div>
                                     <div class="comment-widgets">
-                                        <!-- Comment Row -->
                                         <div class="d-flex flex-row comment-row p-3 mt-0">
                                             <div class="p-2"><img src="plugins/images/users/varun.jpg" alt="user" width="50" class="rounded-circle"></div>
                                             <div class="comment-text ps-2 ps-md-3 w-100">
@@ -372,7 +351,7 @@ try {
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Comment Row -->
+
                                         <div class="d-flex flex-row comment-row p-3">
                                             <div class="p-2"><img src="plugins/images/users/genu.jpg" alt="user" width="50" class="rounded-circle"></div>
                                             <div class="comment-text ps-2 ps-md-3 active w-100">
@@ -386,7 +365,7 @@ try {
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Comment Row -->
+
                                         <div class="d-flex flex-row comment-row p-3">
                                             <div class="p-2"><img src="plugins/images/users/ritesh.jpg" alt="user" width="50" class="rounded-circle"></div>
                                             <div class="comment-text ps-2 ps-md-3 w-100">
@@ -402,8 +381,8 @@ try {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 col-sm-12">
+                            </div> -->
+                            <!-- <div class="col-lg-4 col-md-12 col-sm-12">
                                 <div class="card white-box p-0">
                                     <div class="card-heading">
                                         <h3 class="box-title mb-0">Chat Listing</h3>
@@ -508,7 +487,7 @@ try {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- /.col -->
                         </div>
                     </div>

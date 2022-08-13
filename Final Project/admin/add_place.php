@@ -21,7 +21,7 @@ try {
         <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
         <meta name="description" content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
         <meta name="robots" content="noindex,nofollow">
-        <title>Touristic Places</title>
+        <title>Tourist Places</title>
         <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
         <!-- Favicon icon -->
         <link rel="shortcut icon" type="image/x-icon" href="../pages/images/Untitled design.png" />
@@ -144,7 +144,7 @@ try {
                             <li class="sidebar-item">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    <span class="hide-menu">Touristic places</span>
+                                    <span class="hide-menu">Tourist places</span>
                                 </a>
                             </li>
                             <li class="sidebar-item">

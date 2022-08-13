@@ -175,7 +175,7 @@ try {
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        <span class="hide-menu">Touristic places</span>
+                                        <span class="hide-menu">Tourist places</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">

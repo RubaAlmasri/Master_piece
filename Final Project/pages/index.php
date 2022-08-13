@@ -121,6 +121,7 @@ Start latest Section
 
 			<div class="row">
 				<!-- single blog post -->
+				<?php foreach ($hotels as $i) { ?>
 				<article class="col-lg-4 col-md-6">
 					<div class="post-item">
 						<div class="media-wrapper">
@@ -128,29 +129,16 @@ Start latest Section
 						</div>
 
 						<div class="content">
-							<h3><a href="single-post.html">Kempinski Hotel Ishtar Dead Sea</a></h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo explicabo quos harum labore, adipisci natus.</p>
-							<a class="btn btn-main" href="single.php">See more</a>
+							<h3><a href="single-post.html"><?php echo $i["name"] ?></a></h3>
+							<p><?php echo substr($i["about"], 0, 60) . " ..." ?></p>
+							<a class="btn btn-main" href="single.php?place_id=<?php echo $i["id"] ?>&place_sub=<?php echo $i["sub_category"] ?>&place_name=<?php echo $i["name"] ?>">See more</a>
 						</div>
 					</div>
 				</article>
 				<!-- /single blog post -->
+				<?php } ?>
 
-				<!-- single blog post -->
-				<article class="col-lg-4 col-md-6">
-					<div class="post-item">
-						<div class="media-wrapper">
-							<img loading="lazy" src="images/home/tal-rumman-restaurant.jpg" alt="amazing caves coverimage" class="img-fluid" width="100%" height="200rem">
-						</div>
-
-						<div class="content">
-							<h3><a href="single-post.html">Tal Al-Rumman Restaurant</a></h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo explicabo quos harum labore, adipisci natus.</p>
-							<a class="btn btn-main" href="single.php">See more</a>
-						</div>
-					</div>
-				</article>
-				<!-- end single blog post -->
+				
 
 				<!-- single blog post -->
 				<article class="col-lg-4 col-md-6">
@@ -161,8 +149,8 @@ Start latest Section
 
 						<div class="content">
 							<h3><a href="single-post.html">The Ritz-Carlton <br>Amman</a></h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo explicabo quos harum labore, adipisci natus.</p>
-							<a class="btn btn-main" href="single.php">See more</a>
+							<p><?php echo substr($i["about"], 0, 60) . " ..." ?></p>
+							<a class="btn btn-main" href="single.php?place_id=<?php echo $i["id"] ?>&place_sub=<?php echo $i["sub_category"] ?>&place_name=<?php echo $i["name"] ?>">See more</a>
 						</div>
 					</div>
 				</article>

@@ -36,7 +36,7 @@ try {
         <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
         <meta name="description" content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
         <meta name="robots" content="noindex,nofollow">
-        <title>Touristic Places</title>
+        <title>Tourist Places</title>
         <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
         <!-- Favicon icon -->
         <link rel="shortcut icon" type="image/x-icon" href="../pages/images/Untitled design.png" />
@@ -165,7 +165,7 @@ try {
                             <li class="sidebar-item">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    <span class="hide-menu">Touristic places</span>
+                                    <span class="hide-menu">Tourist places</span>
                                 </a>
                             </li>
                             <li class="sidebar-item">
@@ -196,7 +196,7 @@ try {
                 <div class="page-breadcrumb bg-white">
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                            <h4 class="page-title">Touristic Places</h4>
+                            <h4 class="page-title">Tourist Places</h4>
                         </div>
                         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                             <div class="d-md-flex">
@@ -204,7 +204,7 @@ try {
                                     <li><a href="dashboard.php" class="fw-normal">Dashboard</a></li>
                                 </ol>
                                 <a href="add_place.php" class="btn btn-primary  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add
-                                Touristic Place</a>
+                                Tourist Place</a>
                             </div>
                         </div>
                     </div>

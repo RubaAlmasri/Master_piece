@@ -8,7 +8,7 @@ try {
     $query = "SELECT * FROM users";
     $statement = $conn->prepare($query);
     $statement->execute();
-    $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     if($id){
 ?>
@@ -160,7 +160,7 @@ try {
                             <li class="sidebar-item">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link" href="touristic places.php" aria-expanded="false">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    <span class="hide-menu">Touristic places</span>
+                                    <span class="hide-menu">Tourist places</span>
                                 </a>
                             </li>
                             <li class="sidebar-item">
@@ -251,7 +251,7 @@ try {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($categories as $i) { ?>
+                                            <?php foreach ($users as $i) { ?>
                                                 <tr>
                                                     <td><?php echo $i['user_id']; ?></td>
                                                     <td><?php echo $i['user_name']; ?></td>

@@ -140,18 +140,9 @@ Fixed Navigation
                 <a class="nav-link" href="contact.php" style="font-size:1.0rem ;">Contact Us</a>
               </li>
 
-              <?php if (!$_SESSION['id']) { ?>
-                <li class="nav-item <?php if ($page == 'user') {
-                                      echo 'active';
-                                    } ?>">
-                  <a class="nav-link" href="user_profile.php" style="font-size:1.0rem ;">Profile</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="logout.php" style="font-size:1.0rem ;">Logout</a>
-                </li>
 
 
-              <?php } else { ?>
+              <?php if (!isset($_SESSION['id'])) { ?>
                 <li class="nav-item <?php if ($page == 'login') {
                                       echo 'active';
                                     } ?>">
@@ -161,6 +152,19 @@ Fixed Navigation
                                       echo 'active';
                                     } ?>">
                   <a class="nav-link" href="register.php" style="font-size:1.0rem ;">Register</a>
+                </li>
+
+
+              <?php } else { ?>
+
+
+                <li class="nav-item <?php if ($page == 'user') {
+                                      echo 'active';
+                                    } ?>">
+                  <a class="nav-link" href="user_profile.php" style="font-size:1.0rem ;">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="logout.php" style="font-size:1.0rem ;">Logout</a>
                 </li>
               <?php } ?>
 

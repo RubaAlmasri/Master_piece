@@ -104,11 +104,11 @@ try {
                                         </div>
                                         <div class="form-outline form-white mb-4" style="text-align: left;">
                                             <label for="password">Password: <span style="color: red;">*</span></label>
-                                            <input name="password" type="password" id="password" class="form-control form-control-lg" required />
+                                            <input name="password" type="password" minlength="8" id="password" class="form-control form-control-lg" required />
                                         </div>
                                         <div class="form-outline form-white mb-4" style="text-align: left;">
                                             <label for="con-password">Confirm Password: <span style="color: red;">*</span></label>
-                                            <input name="con-password" type="password" id="con-password" class="form-control form-control-lg" required />
+                                            <input name="con-password" type="password" minlength="8" id="con-password" class="form-control form-control-lg" required />
                                         </div>
                                         <!-- <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p> -->
                                         <!-- <a href="../new/index.php">

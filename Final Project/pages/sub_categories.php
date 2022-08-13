@@ -45,7 +45,7 @@ try {
                                 <div class="post-item text-center">
                                     <div class="media-wrapper">
                                         <a href="service.php?category_name=<?php echo $_GET['category_name'] ?>&sub=<?php echo $i['sub_cat_id'] ?>">
-                                            <img loading="lazy" src="images/home/<?php echo $i['sub_cat_img'] ?>" alt="amazing caves coverimage" class="img-fluid" width="100%" height="200rem">
+                                            <img loading="lazy" src="images/home/<?php echo $i['sub_cat_img'] ?>" alt="amazing caves coverimage" class="img-fluid" width="100%" style="height: 25rem;">
                                         </a>
                                     </div>
 
@@ -53,7 +53,7 @@ try {
                                         <h3><a href="service.php?category_name=<?php echo $_GET['category_name'] ?>&sub=<?php echo $i['sub_cat_id'] ?>">
                                                 <?php echo $i['sub_cat_name'] ?>
                                             </a></h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo explicabo quos harum labore, adipisci natus.</p>
+                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo explicabo quos harum labore, adipisci natus.</p> -->
                                         <a class="btn btn-main" href="service.php?category_name=<?php echo $_GET['category_name'] ?>&sub=<?php echo $i['sub_cat_id'] ?>">See more</a>
                                     </div>
                                 </div>

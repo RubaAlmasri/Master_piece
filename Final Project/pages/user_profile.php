@@ -1,14 +1,18 @@
 <?php
 
+session_start();
 
-$user_id = $_SESSION['id'] ?? 5;
-$user_status = $_SESSION['user_status'] ?? 2;
-$hotelid = $_SESSION['hotel_id'] ?? 1;
+$user_id = $_SESSION['id'] ?? null;
+$user_status = $_SESSION['user_status'] ?? null;
+$hotelid = $_SESSION['hotel_id'] ?? null;
+
+session_write_close();
 
 if ($user_id) {
 
-    $page = 'user';
     include_once('./layout/header.php');
+    $page = 'user';
+
 ?>
 
 
@@ -66,8 +70,9 @@ if ($user_id) {
                                 ?>
                             </div>
                         <?php
-                        }if (isset($_SESSION['status9'])){ ?>
-                        <div class="alert alert-success" role="alert">
+                        }
+                        if (isset($_SESSION['status9'])) { ?>
+                            <div class="alert alert-success" role="alert">
                                 <?php
                                 echo $_SESSION['status9'];
                                 unset($_SESSION['status9']);
@@ -174,7 +179,7 @@ if ($user_id) {
                                     </thead>
                                     <tbody>
                                         <?php foreach ($reservations as $i) {
-                                            if ($i["user_id"] == $user_id && $i["hotel_id"] == $hotelid) { ?>
+                                            if ($i["hotel_id"] == $hotelid) { ?>
                                                 <tr>
                                                     <th scope="row"><?php echo $i["user_name"] ?></th>
                                                     <th scope="row"><?php echo $i["user_email"] ?></th>
@@ -199,7 +204,7 @@ if ($user_id) {
                         </div>
                     <?php } ?>
                     <!--/tab-pane-->
-                   
+
                 </div>
                 <!--/tab-pane-->
             </div>

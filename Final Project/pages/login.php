@@ -15,22 +15,27 @@ try {
         $statement = $conn->prepare($query);
         $statement->execute([
             ':mail' => $email,
-            ':pass'=>md5($pass)
+            ':pass' => md5($pass)
         ]);
-        $users = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $usersss = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        if ($users) {
-            $_SESSION['id']=$users['user_id'];
-            $_SESSION['name']=$users['user_name'];
-            $_SESSION['user_status']=$users['user_status'];
-            $_SESSION['hotel_id']=$users['hotel_id'];
+        if ($usersss!=null) {
+            foreach($usersss as $user){
+            // $_SESSION['id'] = $usersss['user_id'];
+            // $_SESSION['name'] = $usersss['user_name'];
+            // $_SESSION['user_status'] = $usersss['user_status'];
+            // $_SESSION['hotel_id'] = $usersss['hotel_id'];
+
+            $_SESSION['id'] = $user['user_id'];
+            $_SESSION['name'] = $user['user_name'];
+            $_SESSION['user_status'] = $user['user_status'];
+            $_SESSION['hotel_id'] = $user['hotel_id'];
+            }
 
             header('location:index.php');
-           
         } else {
 
             $_SESSION['error'] = 'Incorrect email or password';
-
         }
     }
 ?>
@@ -98,13 +103,13 @@ try {
                                             <input name="login-password" type="password" id="login-password" class="form-control form-control-lg" required />
                                         </div>
                                         <button type="submit" name="login" value="send" class="btn btn-main">Login</button>
-
-                                        <!-- <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p> -->
-                                        <!-- <a href="../new/index.php">
+                                    </form>
+                                    <!-- <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p> -->
+                                    <!-- <a href="../new/index.php">
                                         <button name="submit" class="btn btn-outline-light btn-lg px-5" type="submit" style="background-color: #e24e47;">Login</button></a> -->
 
                                 </div>
-                                </form>
+
                                 <div>
                                     <p class="mb-0">Don't have an account? <a href="register.php" class="text-50 fw-bold">Sign Up</a>
                                     </p>

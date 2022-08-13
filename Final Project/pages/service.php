@@ -18,7 +18,7 @@ try {
 						if ($_GET["sub"] == 1) {
 							echo 'Hotels';
 						} else {
-							echo 'Touristic Places';
+							echo 'Tourist Places';
 						}
 						?>
 					</h2>
@@ -34,7 +34,7 @@ try {
 							if ($_GET["sub"] == 1) {
 								echo 'Hotels';
 							} else {
-								echo 'Touristic Places';
+								echo 'Tourist Places';
 							}
 							?>
 						</li>
@@ -73,21 +73,12 @@ try {
 							<h2>Cities</h2>
 							<!-- widget categories list -->
 							<ul class="widget-categories-list">
+								<?php foreach($categories as $cat) {?>
 								<li>
-									<a href="">Amman</a>
+									<a href="sub_categories.php?category_id=<?php echo $cat['category_id'] ?>&category_name=<?php echo $cat["category_name"] ?>"><?php echo $cat["category_name"] ?></a>
 								</li>
-								<li>
-									<a href="">Irbid</a>
-								</li>
-								<li>
-									<a href="">Ma'an</a>
-								</li>
-								<li>
-									<a href="">Ajloun</a>
-								</li>
-								<li>
-									<a href="">Jerash</a>
-								</li>
+								
+								<?php } ?>
 							</ul>
 						</div>
 					</aside>
