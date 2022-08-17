@@ -178,6 +178,12 @@ try {
                                         <span class="hide-menu">Comments</span>
                                     </a>
                                 </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="msg.php" aria-expanded="false">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                        <span class="hide-menu">Messages</span>
+                                    </a>
+                                </li>
 
 
                             </ul>

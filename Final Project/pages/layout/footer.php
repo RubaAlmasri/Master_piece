@@ -4,7 +4,7 @@
             <div class="row justify-content-around">
                 <div class="col-lg-5 col-md-4 mb-5 mb-lg-0">
                     <h3>about</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio corrupti assumenda obcaecati laudantium dolorum sit!</p>
+                    <p>WONDROUS is a website for tourists from inside and outside Jordan...</p>
                 </div>
 
 
@@ -14,7 +14,7 @@
                             <h3>Quick Links</h3>
                         </li>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="service.php">Cities</a></li>
+                        <li><a href="">Cities</a></li>
                         <li><a href="about.php">About</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>

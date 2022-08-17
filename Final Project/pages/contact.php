@@ -1,5 +1,5 @@
 <?php
-$page='contact';
+$page = 'contact';
 include_once('./layout/header.php');
 ?>
 
@@ -66,7 +66,18 @@ include_once('./layout/header.php');
 
 			<!-- Contact Form -->
 			<div class="contact-form col-md-6 ">
-				<form id="contact-form" method="post" role="form">
+				<?php
+				if (isset($_SESSION['status1'])) { ?>
+					<div class="alert alert-success" role="alert">
+						<?php
+						echo $_SESSION['status1'];
+						unset($_SESSION['status1']);
+						?>
+					</div>
+				<?php
+				} ?>
+
+				<form id="contact-form" method="post" action="send_msg.php" role="form">
 					<div class="form-group mb-4">
 						<label for="name"><b>Name: <span style="color: red;">*</span></b></label>
 						<input type="text" class="form-control" name="name" id="name" title="Please fill out your name" required>
@@ -87,7 +98,7 @@ include_once('./layout/header.php');
 						<textarea rows="6" class="form-control" name="message" id="message" title="Please fill out your message" required></textarea>
 					</div>
 					<div id="cf-submit">
-					<button type="submit" value="send" class="btn btn-main">Send Message</button>
+						<button type="submit" value="send" class="btn btn-main">Send Message</button>
 					</div>
 
 				</form>
