@@ -39,7 +39,7 @@ try {
         ':status' => 'Not confirmed'
     ]);
     $_SESSION['status1'] = 'Reservation Done Successfully ';
-    header('location:book-form.php?place_id=' . $hotelid);
+    header('location:book-form.php?place_id=' . $hotelid.'&place_name='.$hotelname);
 } catch (PDOException $e) {
     echo $query . "<br>" . $e->getMessage();
 } finally {

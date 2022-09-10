@@ -14,7 +14,7 @@
                             <h3>Quick Links</h3>
                         </li>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="">Cities</a></li>
+                        <li><a href="#">Cities</a></li>
                         <li><a href="about.php">About</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>

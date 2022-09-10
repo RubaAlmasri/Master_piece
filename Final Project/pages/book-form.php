@@ -1,7 +1,14 @@
 <?php
 include_once('./layout/header.php');
 
-$user = $_SESSION['id'] ?? 5;
+$user = $_SESSION['id'] ?? null;
+
+
+$place_id = $_GET["place_id"] ?? null;
+$place_name = $_GET["place_name"] ?? null;
+
+try {
+  if ($place_name && $place_id) {
 
 ?>
 
@@ -93,7 +100,7 @@ $user = $_SESSION['id'] ?? 5;
         </form>
     </div>
 <?php } else { 
-    $_SESSION['last_page']= 'book-form.php';
+    $_SESSION["last_page"]= 'book-form.php?place_id='.$_GET["place_id"].'&place_name='.$_GET["place_name"];
     ?>
     <div class="vh-100 gradient-custom pt-5">
         <div class="container mt-5 mb-5 text-center">
@@ -106,4 +113,14 @@ $user = $_SESSION['id'] ?? 5;
 
 <?php
 include_once('./layout/footer.php');
+} else {
+    // header('location:404.html');
+    echo '<script>
+             window.location.href="404.html"
+              </script>';
+  }} catch (PDOException $e) {
+      echo $query . "<br>" . $e->getMessage();
+  } finally {
+      $conn = NULL;
+  }
 ?>

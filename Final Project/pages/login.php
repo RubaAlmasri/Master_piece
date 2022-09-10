@@ -32,7 +32,15 @@ try {
             $_SESSION['hotel_id'] = $user['hotel_id'];
             }
 
+            if(isset($_SESSION['last_page'])){
+                header('location:'.$_SESSION["last_page"]);
+            }
+            else if(isset($_SESSION['last_single_page'])){
+                header('location:'.$_SESSION["last_single_page"]);
+            }
+            else{
             header('location:index.php');
+            }
         } else {
 
             $_SESSION['error'] = 'Incorrect email or password';
