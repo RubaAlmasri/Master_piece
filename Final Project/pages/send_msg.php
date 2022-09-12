@@ -36,7 +36,6 @@ try {
     //     header('location:contact.php');
     // }
 
-    
       $_SESSION['status1'] = 'Message Send Successfully ';
         header('location:contact.php');
     
