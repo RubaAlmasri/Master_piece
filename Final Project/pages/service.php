@@ -71,9 +71,9 @@ try {
 						<!-- sidebar -->
 						<aside class="sidebar pl-0 pl-lg-4">
 							<div class="widget-search widget">
-								<form action="#">
+								<form action="#" method="post">
 									<!-- Search bar -->
-									<input class="form-control shadow-none" type="text" placeholder="Search..." name="search">
+									<input class="form-control shadow-none" type="text" name="search" placeholder="Search..." name="search" value="<?php echo $search; ?>">
 									<button type="submit" class="widget-search-btn">
 										<i class="tf-ion-ios-search"></i>
 									</button>
@@ -151,7 +151,6 @@ try {
 			</div>
 			<!-- end container -->
 		</section>
-
 
 <?php
 		include_once('./layout/footer.php');

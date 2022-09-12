@@ -2,16 +2,20 @@
 include_once '../pages/connect/connect.php';
 session_start();
 
-$id = $_SESSION["admin_id"] ?? 1;
+$id = $_SESSION["admin_id"] ?? null;
 
 try {
-    $query = "SELECT * FROM users";
-    $statement = $conn->prepare($query);
-    $statement->execute();
-    $users = $statement->fetchAll(PDO::FETCH_ASSOC);
-
 
     if ($id) {
+
+        $query = "SELECT * FROM users WHERE user_id=:id";
+        $statement = $conn->prepare($query);
+        $statement->execute(
+            [
+                ':id' => $id,
+            ]
+        );
+        $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -94,7 +98,7 @@ try {
                                 <!-- ============================================================== -->
                                 <li>
                                     <a class="profile-pic" href="#">
-                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium">Ruba</span></a>
+                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium"><?php echo $_SESSION['admin_name']; ?></span></a>
                                 </li>
                                 <!-- ============================================================== -->
                                 <!-- User profile and search -->
@@ -194,7 +198,8 @@ try {
                                     <ol class="breadcrumb ms-auto">
                                         <li><a href="dashboard.php" class="fw-normal">Dashboard</a></li>
                                     </ol>
-
+                                    <a href="logout.php" class="btn btn-primary d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Logout
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -223,65 +228,65 @@ try {
                         <!-- Row -->
                         <div class="row">
                             <?php foreach ($users as $i) {
-                                if ($i["user_id"] == $id) { ?>
-                                    <!-- Column -->
-                                    <div class="col-lg-4 col-xlg-3 col-md-12">
-                                        <div class="white-box">
-                                            <div class="user-bg"> <img width="100%" alt="user" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-                                                <div class="overlay-box">
-                                                    <div class="user-content">
-                                                        <a href="javascript:void(0)"><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="thumb-lg img-circle" alt="img"></a>
-                                                        <h4 class="text-white mt-2"><?php echo $i['user_name']; ?></h4>
-                                                        <h5 class="text-white mt-2"><?php echo $i['user_email']; ?></h5>
-                                                    </div>
+                            ?>
+                                <!-- Column -->
+                                <div class="col-lg-4 col-xlg-3 col-md-12">
+                                    <div class="white-box">
+                                        <div class="user-bg"> <img width="100%" alt="user" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                            <div class="overlay-box">
+                                                <div class="user-content">
+                                                    <a href="javascript:void(0)"><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="thumb-lg img-circle" alt="img"></a>
+                                                    <h4 class="text-white mt-2"><?php echo $i['user_name']; ?></h4>
+                                                    <h5 class="text-white mt-2"><?php echo $i['user_email']; ?></h5>
                                                 </div>
                                             </div>
+                                        </div>
 
+                                    </div>
+                                </div>
+                                <!-- Column -->
+                                <!-- Column -->
+                                <div class="col-lg-8 col-xlg-9 col-md-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <form class="form-horizontal form-material" method="post" action="update_profile.php">
+                                                <div class="form-group mb-4">
+                                                    <label class="col-md-12 p-0">Full Name</label>
+                                                    <div class="col-md-12 border-bottom p-0">
+                                                        <input type="text" name="user_name" value="<?php echo $i['user_name']; ?>" class="form-control p-0 border-0">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mb-4">
+                                                    <label for="example-email" class="col-md-12 p-0">Email</label>
+                                                    <div class="col-md-12 border-bottom p-0">
+                                                        <input type="email" name="user_email" value="<?php echo $i['user_email']; ?>" class="form-control p-0 border-0" name="example-email" id="example-email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mb-4">
+                                                    <label class="col-md-12 p-0">Password</label>
+                                                    <div class="col-md-12 border-bottom p-0">
+                                                        <input type="password" name="user_pass" value="<?php echo $i['user_password']; ?>" class="form-control p-0 border-0">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mb-4">
+                                                    <label class="col-md-12 p-0">Phone No.</label>
+                                                    <div class="col-md-12 border-bottom p-0">
+                                                        <input type="text" name="user_phone" value="<?php echo $i['user_phone']; ?>" class="form-control p-0 border-0">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group mb-4">
+                                                    <div class="col-sm-12">
+                                                        <button class="btn btn-success" type="submit">Update Profile</button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
-                                    <!-- Column -->
-                                    <!-- Column -->
-                                    <div class="col-lg-8 col-xlg-9 col-md-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <form class="form-horizontal form-material" method="post" action="update_profile.php">
-                                                    <div class="form-group mb-4">
-                                                        <label class="col-md-12 p-0">Full Name</label>
-                                                        <div class="col-md-12 border-bottom p-0">
-                                                            <input type="text" name="user_name" value="<?php echo $i['user_name']; ?>" class="form-control p-0 border-0">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group mb-4">
-                                                        <label for="example-email" class="col-md-12 p-0">Email</label>
-                                                        <div class="col-md-12 border-bottom p-0">
-                                                            <input type="email" name="user_email" value="<?php echo $i['user_email']; ?>" class="form-control p-0 border-0" name="example-email" id="example-email">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group mb-4">
-                                                        <label class="col-md-12 p-0">Password</label>
-                                                        <div class="col-md-12 border-bottom p-0">
-                                                            <input type="password" name="user_pass" value="<?php echo $i['user_password']; ?>" class="form-control p-0 border-0">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group mb-4">
-                                                        <label class="col-md-12 p-0">Phone No.</label>
-                                                        <div class="col-md-12 border-bottom p-0">
-                                                            <input type="text" name="user_phone" value="<?php echo $i['user_phone']; ?>" class="form-control p-0 border-0">
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="form-group mb-4">
-                                                        <div class="col-sm-12">
-                                                            <button class="btn btn-success" type="submit">Update Profile</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Column -->
-                            <?php }
+                                </div>
+                                <!-- Column -->
+                            <?php
                             } ?>
                         </div>
                         <!-- Row -->
@@ -337,7 +342,7 @@ try {
 
 <?php
     } else {
-        header("location:404.html");
+        header("location:login.php");
     }
 } catch (PDOException $e) {
     echo $query . "<br>" . $e->getMessage();

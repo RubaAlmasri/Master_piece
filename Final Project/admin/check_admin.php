@@ -5,18 +5,30 @@ session_start();
 
 try {
 
-    $email = $_POST['login-email'];
-    $pass = $_POST['password'];
+        $email = $_POST["login-email"];
+        $pass = $_POST["login-password"];
+        $status = 1;
 
-    if ($email == 'ruba@gmail.com' && $pass == 'ruba1234') {
-        $_SESSION["admin_id"] = 1;
-        header('location:dashboard.php');
-    }
-    else{
-        $_SESSION['status2'] = 'Wrong Email or Password';
-        header('location:login.php');
-    }
+        $query = "SELECT * FROM users WHERE user_email=:mail AND user_password=:pass AND user_status=:status";
+        $statement = $conn->prepare($query);
+        $statement->execute([
+            ':mail' => $email,
+            ':pass' => $pass,
+            ':status' => $status,
+        ]);
+        $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+        if ($users != null) {
+            foreach ($users as $user) {
+                $_SESSION["admin_id"] = $user['user_id'];
+                $_SESSION["admin_name"] = $user['user_name'];
+                header('location:dashboard.php');
+            }
+        } else {
+            $_SESSION['error'] = 'Incorrect email or password';
+            header('location:login.php');
+        }
+    
 } catch (PDOException $e) {
     echo $query . "<br>" . $e->getMessage();
 } finally {

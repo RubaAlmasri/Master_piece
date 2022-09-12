@@ -163,6 +163,7 @@ End Fixed Navigation
                           <!-- comment list -->
                           <?php
                           foreach ($p_comments as $i) {
+                            if($i["place_id"]==$_GET["place_id"] && $i["place_name"]==$_GET["place_name"]){
                           ?>
                             <li class="comment-list-item">
                               <div class="comment-list-item-image">
@@ -174,12 +175,12 @@ End Fixed Navigation
                                 <h6><?php echo $i["comment"] ?></h6>
                               </div>
                             </li>
-                          <?php } ?>
+                          <?php } }?>
                         </ul>
                         <?php
                         if ($user_id) {
                         ?>
-                          <h3>Leave A Comment</h3>
+                          <!-- <h3>Leave A Comment</h3> -->
                           <!-- Comment Form -->
                           <form action="add_comment.php" class="comment-form" method="post">
                             <input type="hidden" name="p_id" value="<?php echo $_GET["place_id"] ?>">
@@ -198,7 +199,7 @@ End Fixed Navigation
                           $_SESSION["last_single_page"] = 'single.php?place_id=' . $_GET["place_id"] . '&place_sub=' . $_GET["place_sub"] . '&place_name=' . $_GET["place_name"];
 
                         ?>
-                          <h3>Leave A Comment</h3>
+                          <!-- <h3>Leave A Comment</h3> -->
                           <div class="alert alert-warning" role="alert">
                             Please <a href="login.php">Login</a> To Leave A Comment
                           </div>
@@ -281,6 +282,7 @@ End Fixed Navigation
                           <!-- comment list -->
                           <?php
                           foreach ($h_comments as $i) {
+                            if($i["place_id"]==$_GET["place_id"] && $i["place_name"]==$_GET["place_name"]){
                           ?>
                             <li class="comment-list-item">
                               <div class="comment-list-item-image">
@@ -292,12 +294,12 @@ End Fixed Navigation
                                 <h6><?php echo $i["comment"] ?></h6>
                               </div>
                             </li>
-                          <?php } ?>
+                          <?php } }?>
                         </ul>
                         <?php
                         if ($user_id) {
                         ?>
-                          <h3>Leave A Comment</h3>
+                          <!-- <h3>Leave A Comment</h3> -->
                           <!-- Comment Form -->
                           <form action="add_comment.php" class="comment-form" method="post">
                             <input type="hidden" name="p_id" value="<?php echo $_GET["place_id"] ?>">
@@ -316,7 +318,7 @@ End Fixed Navigation
                           $_SESSION["last_single_page"] = 'single.php?place_id=' . $_GET["place_id"] . '&place_sub=' . $_GET["place_sub"] . '&place_name=' . $_GET["place_name"];
 
                         ?>
-                          <h3>Leave A Comment</h3>
+                          <!-- <h3>Leave A Comment</h3> -->
                           <div class="alert alert-warning" role="alert">
                             Please <a href="login.php">Login</a> To Leave A Comment
                           </div>

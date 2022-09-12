@@ -1,7 +1,7 @@
 <?php
 include_once '../pages/connect/connect.php';
 session_start();
-$id = $_SESSION["admin_id"] ?? 1;
+$id = $_SESSION["admin_id"] ?? null;
 
 try {
     $query = "SELECT * FROM users";
@@ -27,10 +27,6 @@ try {
 
     if ($id) {
 ?>
-
-
-
-
 
         <!DOCTYPE html>
         <html dir="ltr" lang="en">
@@ -89,7 +85,6 @@ try {
                         <!-- End Logo -->
                         <!-- ============================================================== -->
                         <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-
                             <!-- ============================================================== -->
                             <!-- Right side toggle and nav items -->
                             <!-- ============================================================== -->
@@ -98,21 +93,37 @@ try {
                                 <!-- ============================================================== -->
                                 <!-- Search -->
                                 <!-- ============================================================== -->
-                                <li class=" in">
+                                <!-- <li class=" in">
                                     <form role="search" class="app-search d-none d-md-block me-3">
                                         <input type="text" placeholder="Search..." class="form-control mt-0">
                                         <a href="" class="active">
                                             <i class="fa fa-search"></i>
                                         </a>
                                     </form>
-                                </li>
+                                </li> -->
                                 <!-- ============================================================== -->
                                 <!-- User profile and search -->
                                 <!-- ============================================================== -->
                                 <li>
                                     <a class="profile-pic" href="profile.php">
-                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium">Ruba</span></a>
+                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user-img" width="36" class="img-circle">
+                                        <span class="text-white font-medium">
+                                            <?php echo $_SESSION['admin_name']; ?>
+                                        </span>
+                                    </a>
+
                                 </li>
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:1.0rem ;"><b>Hello</b> <?php echo $_SESSION['admin_name']; ?><i class="tf-ion-chevron-down"></i></a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                        <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+                                        <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+
+                                    </ul>
+                                </li> -->
+                                
+
                                 <!-- ============================================================== -->
                                 <!-- User profile and search -->
                                 <!-- ============================================================== -->
@@ -542,7 +553,7 @@ try {
 
 <?php
     } else {
-        header("location:404.html");
+        header("location:login.php");
     }
 } catch (PDOException $e) {
     echo $query . "<br>" . $e->getMessage();

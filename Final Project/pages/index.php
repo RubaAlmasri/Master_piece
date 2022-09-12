@@ -13,7 +13,7 @@ try {
 					<div class="col-md-12 text-center">
 						<h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">Wonderful Destinations<br></h1>
 						<p data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".5"></p><br>
-						<a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn btn-main" href="service.php">See More</a>
+						<a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn btn-main" href="service.php?category_name=Ma'an&sub=3">See More</a>
 					</div>
 				</div>
 			</div>
@@ -24,7 +24,7 @@ try {
 					<div class="col-md-12 text-center">
 						<h1 data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Find The Best <br> Place For Your Holidays</h1>
 						<p data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".5"></p><br>
-						<a data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".8" class="btn btn-main" href="service.php">See More</a>
+						<a data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".8" class="btn btn-main" href="single.php?place_id=1&place_sub=1&place_name=Kempinski Hotel Ishtar Dead Sea">See More</a>
 					</div>
 				</div>
 			</div>
@@ -35,7 +35,7 @@ try {
 					<div class="col-md-12 text-center">
 						<h1 data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Discover The <br>Best Services Near You</h1>
 						<p data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".5"></p><br>
-						<a data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".8" class="btn btn-main" href="service.php">See More</a>
+						<a data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".8" class="btn btn-main" href="service.php?category_name=Dead Sea&sub=1">See More</a>
 					</div>
 				</div>
 			</div>
@@ -66,7 +66,7 @@ Start About Section
 
 								<div class="card" style="width: 18rem; margin-bottom: 5%;">
 									<a href="sub_categories.php?category_id=<?php echo $i['category_id'] ?>&category_name=<?php echo $i["category_name"] ?>">
-									<img class="card-img-top" src="../admin/images/<?php echo $i['category_img']; ?>" alt="Card image cap" width="100%" height="200rem">
+										<img class="card-img-top" src="../admin/images/<?php echo $i['category_img']; ?>" alt="Card image cap" width="100%" height="200rem">
 									</a>
 									<div class="card-body">
 										<h5 class="card-title"><a href="sub_categories.php?category_id=<?php echo $i['category_id'] ?>&category_name=<?php echo $i["category_name"] ?>" style="color: black;" onMouseOver="this.style.color='#28ABE3'" onMouseOut="this.style.color='black'"><?php echo $i['category_name']; ?></a></h5>
@@ -121,27 +121,29 @@ Start latest Section
 
 			<div class="row">
 				<!-- single blog post -->
-				<?php foreach ($hotels as $i) { ?>
-				<article class="col-lg-4 col-md-6">
-					<div class="post-item">
-						<div class="media-wrapper">
-							<img loading="lazy" src="images/home/Kempinski.jpg" alt="amazing caves coverimage" class="img-fluid" width="100%" height="200rem">
-						</div>
+				<?php foreach ($latest_hotels as $i) { ?>
+					<article class="col-lg-4 col-md-6">
+						<div class="post-item h-100">
+							<div class="media-wrapper">
+								<a href="single.php?place_id=<?php echo $i["id"] ?>&place_sub=<?php echo $i["sub_category"] ?>&place_name=<?php echo $i["name"] ?>">
+									<img loading="lazy" src="../admin/images/<?php echo $i["img1"] ?>" alt="amazing caves coverimage" class="img-fluid" style="width: 100%; height: 15rem;">
+								</a>
+							</div>
 
-						<div class="content">
-							<h3><a href="single-post.html"><?php echo $i["name"] ?></a></h3>
-							<p><?php echo substr($i["about"], 0, 60) . " ..." ?></p>
-							<a class="btn btn-main" href="single.php?place_id=<?php echo $i["id"] ?>&place_sub=<?php echo $i["sub_category"] ?>&place_name=<?php echo $i["name"] ?>">See more</a>
+							<div class="content">
+								<h3 style="height: 5rem;"><a href="single.php?place_id=<?php echo $i["id"] ?>&place_sub=<?php echo $i["sub_category"] ?>&place_name=<?php echo $i["name"] ?>"><?php echo $i["name"] ?></a></h3>
+								<p><?php echo substr($i["about"], 0, 60) . " ..." ?></p>
+								<a class="btn btn-main" href="single.php?place_id=<?php echo $i["id"] ?>&place_sub=<?php echo $i["sub_category"] ?>&place_name=<?php echo $i["name"] ?>">See more</a>
+							</div>
 						</div>
-					</div>
-				</article>
-				<!-- /single blog post -->
+					</article>
+					<!-- /single blog post -->
 				<?php } ?>
 
-				
+
 
 				<!-- single blog post -->
-				<article class="col-lg-4 col-md-6">
+				<!-- <article class="col-lg-4 col-md-6">
 					<div class="post-item">
 						<div class="media-wrapper">
 							<img loading="lazy" src="images/home/the ritz.jpg" alt="amazing caves coverimage" class="img-fluid" width="100%" height="200rem">
@@ -153,7 +155,7 @@ Start latest Section
 							<a class="btn btn-main" href="single.php?place_id=<?php echo $i["id"] ?>&place_sub=<?php echo $i["sub_category"] ?>&place_name=<?php echo $i["name"] ?>">See more</a>
 						</div>
 					</div>
-				</article>
+				</article> -->
 				<!-- end single blog post -->
 			</div> <!-- end row -->
 		</div> <!-- end container -->

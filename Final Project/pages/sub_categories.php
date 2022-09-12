@@ -20,54 +20,47 @@ try {
         </div>
     </section>
 
-    <section class="blog" id="blog">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <!-- section title -->
-                <div class="col-xl-6 col-lg-8">
-                    <div class="title text-center ">
-                        <h2> Our <span class="color">Services</span></h2>
-                        <div class="border"></div>
-                    </div>
-                </div>
-                <!-- /section title -->
-            </div>
-            <div class="row">
-
-                <div class="col-lg-11 ml-4">
+    
 
 
-                    <div class="row ml-5">
+    
 
-                        <?php foreach ($sub_cat as $i) { ?>
+		<section class="blog" id="blog">
+		<div class="container">
+			<div class="row justify-content-center">
+				<!-- section title -->
+				<div class="col-xl-6 col-lg-8">
+					<div class="title text-center ">
+						<h2>Our <span class="color">Services</span></h2>
+						<div class="border"></div>
+					</div>
+				</div>
+				<!-- /section title -->
+			</div>
 
-                            <article class="col-lg-6 col-md-6">
-                                <div class="post-item text-center">
-                                    <div class="media-wrapper">
-                                        <a href="service.php?category_name=<?php echo $_GET['category_name'] ?>&sub=<?php echo $i['sub_cat_id'] ?>">
-                                            <img loading="lazy" src="images/home/<?php echo $i['sub_cat_img'] ?>" alt="amazing caves coverimage" class="img-fluid" width="100%" style="height: 25rem;">
-                                        </a>
-                                    </div>
+			<div class="row">
+				<!-- single blog post -->
+				<?php foreach ($sub_cat as $i) { ?>
+					<article class="col-lg-6 col-md-6">
+						<div class="post-item h-100">
+							<div class="media-wrapper">
+								<a href="service.php?category_name=<?php echo $_GET['category_name'] ?>&sub=<?php echo $i['sub_cat_id'] ?>">
+									<img loading="lazy" src="images/home/<?php echo $i['sub_cat_img'] ?>" alt="amazing caves coverimage" class="img-fluid" style="width: 100%; height: 20rem;">
+								</a>
+							</div>
 
-                                    <div class="content">
-                                        <h3><a href="service.php?category_name=<?php echo $_GET['category_name'] ?>&sub=<?php echo $i['sub_cat_id'] ?>">
-                                                <?php echo $i['sub_cat_name'] ?>
-                                            </a></h3>
-                                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo explicabo quos harum labore, adipisci natus.</p> -->
-                                        <a class="btn btn-main" href="service.php?category_name=<?php echo $_GET['category_name'] ?>&sub=<?php echo $i['sub_cat_id'] ?>">See more</a>
-                                    </div>
-                                </div>
-                            </article>
+							<div class="content text-center">
+								<h3 ><a href="service.php?category_name=<?php echo $_GET['category_name'] ?>&sub=<?php echo $i['sub_cat_id'] ?>"><?php echo $i['sub_cat_name'] ?></a></h3>
+								<a class="btn btn-main" href="service.php?category_name=<?php echo $_GET['category_name'] ?>&sub=<?php echo $i['sub_cat_id'] ?>">See more</a>
+							</div>
+						</div>
+					</article>
+					<!-- /single blog post -->
+				<?php } ?>
+			</div> <!-- end row -->
+		</div> <!-- end container -->
+	</section>
 
-                        <?php } ?>
-
-
-                    </div> <!-- end row -->
-                </div>
-            </div>
-        </div>
-        <!-- end container -->
-    </section>
 <?php
     include_once('./layout/footer.php');
 } catch (PDOException $e) {

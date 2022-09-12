@@ -2,8 +2,7 @@
 include_once '../pages/connect/connect.php';
 session_start();
 
-$id = $_SESSION["admin_id"] ?? 1;
-
+$id = $_SESSION["admin_id"] ?? null;
 try {
 
     $id = $_GET['id'];
@@ -110,7 +109,7 @@ try {
                                 <!-- ============================================================== -->
                                 <li>
                                     <a class="profile-pic" href="profile.php">
-                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium">Ruba</span></a>
+                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium"><?php echo $_SESSION['admin_name']; ?></span></a>
                                 </li>
                                 <!-- ============================================================== -->
                                 <!-- User profile and search -->
@@ -349,7 +348,7 @@ try {
 
 <?php
     } else {
-        header("location:404.html");
+        header("location:login.php");
     }
 } catch (PDOException $e) {
     echo $query . "<br>" . $e->getMessage();

@@ -9,9 +9,9 @@ $hotelid = $_SESSION['hotel_id'] ?? null;
 session_write_close();
 
 if ($user_id) {
-
-    include_once('./layout/header.php');
     $page = 'user';
+    include_once('./layout/header.php');
+
 
 ?>
 

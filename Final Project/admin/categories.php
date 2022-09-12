@@ -1,7 +1,7 @@
 <?php
 include_once '../pages/connect/connect.php';
 session_start();
-$id = $_SESSION["admin_id"] ?? 1;
+$id = $_SESSION["admin_id"] ?? null;
 
 try {
     $search = $_GET['search'] ?? '';
@@ -102,7 +102,7 @@ try {
                                 <!-- ============================================================== -->
                                 <li class=" in">
                                     <form role="search" method="get" class="app-search d-none d-md-block me-3">
-                                        <input type="text" placeholder="Search..." class="form-control mt-0" value="<?php echo $search; ?>">
+                                        <input type="text" placeholder="Search..." name="search" class="form-control mt-0" value="<?php echo $search; ?>">
                                         <a href="" class="active">
                                             <i class="fa fa-search"></i>
                                         </a>
@@ -113,7 +113,7 @@ try {
                                 <!-- ============================================================== -->
                                 <li>
                                     <a class="profile-pic" href="profile.php">
-                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium">Ruba</span></a>
+                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium"><?php echo $_SESSION['admin_name']; ?></span></a>
                                 </li>
                                 <!-- ============================================================== -->
                                 <!-- User profile and search -->
@@ -213,7 +213,7 @@ try {
                                     <ol class="breadcrumb ms-auto">
                                         <li><a href="dashboard.php" class="fw-normal">Dashboard</a></li>
                                     </ol>
-                                    <a href="../admin/add_category.php" class="btn btn-primary  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add Category</a>
+                                    <a href="../admin/add_category.php" class="btn btn-primary d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add Category</a>
                                 </div>
                             </div>
                         </div>
@@ -355,7 +355,7 @@ try {
 
 <?php
     } else {
-        header("location:404.html");
+        header("location:login.php");
     }
 } catch (PDOException $e) {
     echo $query . "<br>" . $e->getMessage();

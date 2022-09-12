@@ -38,7 +38,7 @@ try {
         ':room_type' => $roomtype,
         ':status' => 'Not confirmed'
     ]);
-    $_SESSION['status1'] = 'Reservation Done Successfully ';
+    $_SESSION['status1'] = 'We received your reservation. We will contact you as soon as possible to confirm your reservation... ';
     header('location:book-form.php?place_id=' . $hotelid.'&place_name='.$hotelname);
 } catch (PDOException $e) {
     echo $query . "<br>" . $e->getMessage();

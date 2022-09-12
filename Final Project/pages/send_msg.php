@@ -19,8 +19,27 @@ try {
         ':sub' => $sub,
         ':msg' => $msg
     ]);
-    $_SESSION['status1'] = 'Message Send Successfully ';
-    header('location:contact.php');
+
+    // $to = 'ruba.h.almasri@gmail.com';
+
+    // $name = trim(stripslashes($name));
+    // $from = trim(stripslashes("ruba.almasri96@gmail.com"));
+    // $subject = "Contact email";
+    // $message = trim(stripslashes($msg));
+    // $headers = "From: $from";
+    // $password = 'wtmzhfpbqlktuxmm';
+
+    // $mail = mail($to, $subject, $message, $headers);
+
+    // if ($mail) {
+    //     $_SESSION['status1'] = 'Message Send Successfully ';
+    //     header('location:contact.php');
+    // }
+
+    
+      $_SESSION['status1'] = 'Message Send Successfully ';
+        header('location:contact.php');
+    
 } catch (PDOException $e) {
     echo $query . "<br>" . $e->getMessage();
 } finally {

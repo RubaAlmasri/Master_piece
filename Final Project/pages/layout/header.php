@@ -14,16 +14,38 @@ try {
   $sub_cat = $statement1->fetchAll(PDO::FETCH_ASSOC);
 
 
-  $query2 = "SELECT * FROM  hotels";
-  $statement2 = $conn->prepare($query2);
-  $statement2->execute();
-  $hotels = $statement2->fetchAll(PDO::FETCH_ASSOC);
+  $query22 = "SELECT * FROM  hotels ORDER BY id desc limit 3";
+  $statement22 = $conn->prepare($query22);
+  $statement22->execute();
+  $latest_hotels = $statement22->fetchAll(PDO::FETCH_ASSOC);
 
 
-  $query3 = "SELECT * FROM touristic_places";
-  $statement3 = $conn->prepare($query3);
-  $statement3->execute();
-  $places = $statement3->fetchAll(PDO::FETCH_ASSOC);
+  $search = $_POST['search'] ?? '';
+  if ($search) {
+    $query2 = 'SELECT * FROM hotels WHERE name LIKE :name';
+    $statement2 = $conn->prepare($query2);
+    $statement2->bindValue(':name', "%$search%");
+    $statement2->execute();
+    $hotels = $statement2->fetchAll(PDO::FETCH_ASSOC);
+
+    $query3 = 'SELECT * FROM hotels WHERE name LIKE :name';
+    $statement3 = $conn->prepare($query3);
+    $statement3->bindValue(':name', "%$search%");
+    $statement3->execute();
+    $places = $statement3->fetchAll(PDO::FETCH_ASSOC);
+  } else {
+
+    $query2 = "SELECT * FROM  hotels";
+    $statement2 = $conn->prepare($query2);
+    $statement2->execute();
+    $hotels = $statement2->fetchAll(PDO::FETCH_ASSOC);
+
+
+    $query3 = "SELECT * FROM touristic_places";
+    $statement3 = $conn->prepare($query3);
+    $statement3->execute();
+    $places = $statement3->fetchAll(PDO::FETCH_ASSOC);
+  }
 
 
   $query4 = "SELECT * FROM users";
@@ -45,6 +67,8 @@ try {
   $statement7 = $conn->prepare($query7);
   $statement7->execute();
   $reservations = $statement7->fetchAll(PDO::FETCH_ASSOC);
+
+
 
 
 ?>
@@ -156,15 +180,16 @@ Fixed Navigation
 
 
               <?php } else { ?>
+                <li class="nav-item dropdown <?php if ($page == 'user') {
+                                              echo 'active';
+                                            } ?>">
+                  <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:1.0rem ;"><b>Hello</b> <?php echo $_SESSION['name']; ?><i class="tf-ion-chevron-down"></i></a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
+                    <li><a class="dropdown-item" href="user_profile.php">Profile</a></li>
+                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
 
-                <li class="nav-item <?php if ($page == 'user') {
-                                      echo 'active';
-                                    } ?>">
-                  <a class="nav-link" href="user_profile.php" style="font-size:1.0rem ;">Profile</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="logout.php" style="font-size:1.0rem ;">Logout</a>
+                  </ul>
                 </li>
               <?php } ?>
 

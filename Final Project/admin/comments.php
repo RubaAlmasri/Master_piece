@@ -1,18 +1,19 @@
 <?php
 include_once '../pages/connect/connect.php';
-$id = $_SESSION["admin_id"] ?? 1;
-
 session_start();
+$id = $_SESSION["admin_id"] ?? null;
+
+
 try {
     $search = $_GET['search'] ?? '';
     if ($search) {
-        $query = 'SELECT * FROM  hotels_comments WHERE comment_status LIKE :status';
+        $query = 'SELECT * FROM  hotels_comments WHERE place_name LIKE :status';
         $statement = $conn->prepare($query);
         $statement->bindValue(':status', "%$search%");
         $statement->execute();
         $comm_hotels = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        $query1 = 'SELECT * FROM  places_comments WHERE comment_status LIKE :status';
+        $query1 = 'SELECT * FROM  places_comments WHERE place_name LIKE :status';
         $statement = $conn->prepare($query1);
         $statement->bindValue(':status', "%$search%");
         $statement->execute();
@@ -108,7 +109,7 @@ try {
                                 <!-- ============================================================== -->
                                 <li class=" in">
                                     <form role="search" class="app-search d-none d-md-block me-3">
-                                        <input type="text" placeholder="Search..." class="form-control mt-0">
+                                        <input type="text" placeholder="Search..." name="search" class="form-control mt-0">
                                         <a href="" class="active">
                                             <i class="fa fa-search"></i>
                                         </a>
@@ -119,7 +120,7 @@ try {
                                 <!-- ============================================================== -->
                                 <li>
                                     <a class="profile-pic" href="profile.php">
-                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium">Ruba</span></a>
+                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="user-img" width="36" class="img-circle"><span class="text-white font-medium"><?php echo $_SESSION['admin_name']; ?></span></a>
                                 </li>
                                 <!-- ============================================================== -->
                                 <!-- User profile and search -->
@@ -370,7 +371,7 @@ try {
 
 <?php
     } else {
-        header("location:404.html");
+        header("location:login.php");
     }
 } catch (PDOException $e) {
     echo $query . "<br>" . $e->getMessage();
