@@ -71,7 +71,7 @@ try {
 						<!-- sidebar -->
 						<aside class="sidebar pl-0 pl-lg-4">
 							<div class="widget-search widget">
-								<form action="#" method="post">
+								<form action="" method="post">
 									<!-- Search bar -->
 									<input class="form-control shadow-none" type="text" name="search" placeholder="Search..." name="search" value="<?php echo $search; ?>">
 									<button type="submit" class="widget-search-btn">
@@ -85,7 +85,9 @@ try {
 								<ul class="widget-categories-list">
 									<?php foreach ($categories as $cat) { ?>
 										<li>
-											<a href="sub_categories.php?category_id=<?php echo $cat['category_id'] ?>&category_name=<?php echo $cat["category_name"] ?>"><?php echo $cat["category_name"] ?></a>
+											<a href="sub_categories.php?category_id=<?php echo $cat['category_id'] ?>&category_name=<?php echo $cat["category_name"] ?>"><?php echo $cat["category_name"] ?>
+											<span class="caret"></span>
+										</a>
 										</li>
 
 									<?php } ?>

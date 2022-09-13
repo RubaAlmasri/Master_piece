@@ -112,6 +112,9 @@ try {
     <!-- Ionicons Fonts Css -->
     <link rel="stylesheet" href="plugins/ionicons/ionicons.min.css">
 
+    <!-- Autorefresh The Browser every 10 min -->
+    <meta http-equiv="refresh" content="1200; url='<?php echo $_SERVER["PHP_SELF"]; ?>'">
+
   </head>
 
   <body id="body">

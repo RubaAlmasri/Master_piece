@@ -50,6 +50,9 @@ try {
             <link href="css/style.min.css" rel="stylesheet">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+            <!-- Autorefresh The Browser every 5 min -->
+            <meta http-equiv="refresh" content="300; url='<?php echo $_SERVER["PHP_SELF"]; ?>'">
+
         </head>
 
         <body>

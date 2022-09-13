@@ -20,6 +20,7 @@ try {
                 <ol class="breadcrumb header-bradcrumb justify-content-center">
                     <li class="breadcrumb-item"><a href="index.php" class="text-white">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Book Form</li>
+                    <li class="breadcrumb-item active" aria-current="page"><?php echo $place_name ; ?></li>
                 </ol>
             </div>
         </div>
