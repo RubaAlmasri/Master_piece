@@ -49,6 +49,8 @@ try {
     $_SESSION['status1'] = 'Hotel Added Successfully';
     header('location:hotels.php');
 } catch (PDOException $e) {
+    $_SESSION['status2'] = 'Fail to add hotel, Please try again';
+    header('location:add_hotel.php');
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

@@ -216,6 +216,14 @@ try {
                             ?>
                         </div>
                     <?php
+                    } else if (isset($_SESSION['status2'])) { ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?php
+                            echo $_SESSION['status2'];
+                            unset($_SESSION['status2']);
+                            ?>
+                        </div>
+                    <?php
                     }
                     ?>
                     <!--End success message -->
@@ -248,7 +256,7 @@ try {
                                                         </div>
                                                         <div class="form-outline form-white mb-4" style="text-align: left;">
                                                             <label for="place_location2"><b>Location(Link):</b> <span style="color: red;">*</span></label>
-                                                            <input name="place_location2" type="text" id="place_location2" class="form-control" required />
+                                                            <input name="place_location2" type="url" id="place_location2" class="form-control" required />
                                                         </div>
                                                         <div class="form-outline form-white mb-4">
                                                             <label for="place_city"><b>City:</b> <span style="color: red;">*</span></label>
