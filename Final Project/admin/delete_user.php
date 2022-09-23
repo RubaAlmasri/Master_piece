@@ -14,6 +14,7 @@ try {
     $_SESSION['status4']='User Deleted Successfully ';
     header('location:users.php');
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

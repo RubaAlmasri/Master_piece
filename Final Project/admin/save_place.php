@@ -47,7 +47,7 @@ try {
     $_SESSION['status1'] = 'Place Added Successfully';
     header('location:touristic places.php');
 } catch (PDOException $e) {
-    $_SESSION['status2'] = 'Fail to add place, Please try again';
+    $_SESSION['status2'] = 'Fail to add place (Duplicate name), Please try again';
     header('location:add_place.php');
     echo $query . "<br>" . $e->getMessage();
 } finally {

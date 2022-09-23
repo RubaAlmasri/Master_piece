@@ -142,7 +142,7 @@ if ($user_id) {
                                         <?php foreach ($reservations as $i) {
                                             if ($i["user_id"] == $user_id) { ?>
                                                 <tr>
-                                                    <th scope="row"><?php echo $i["hotel_name"] ?></th>
+                                                    <td><?php echo $i["hotel_name"] ?></td>
                                                     <td><?php echo $i["no_rooms"] ?></td>
                                                     <td><?php echo $i["adults_per_room"] ?></td>
                                                     <td><?php echo $i["child_per_room"] ?></td>
@@ -181,9 +181,9 @@ if ($user_id) {
                                         <?php foreach ($reservations as $i) {
                                             if ($i["hotel_id"] == $hotelid) { ?>
                                                 <tr>
-                                                    <th scope="row"><?php echo $i["user_name"] ?></th>
-                                                    <th scope="row"><?php echo $i["user_email"] ?></th>
-                                                    <th scope="row"><?php echo $i["user_phone"] ?></th>
+                                                    <td><?php echo $i["user_name"] ?></td>
+                                                    <td><?php echo $i["user_email"] ?></td>
+                                                    <td><?php echo $i["user_phone"] ?></td>
                                                     <td><?php echo $i["no_rooms"] ?></td>
                                                     <td><?php echo $i["adults_per_room"] ?></td>
                                                     <td><?php echo $i["child_per_room"] ?></td>

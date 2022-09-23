@@ -14,6 +14,7 @@ try {
     $_SESSION['status3']='Hotel Deleted Successfully ';
     header('location:hotels.php');
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

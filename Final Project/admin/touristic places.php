@@ -8,12 +8,14 @@ $id = $_SESSION["admin_id"] ?? null;
 try {
     $search = $_GET['search'] ?? '';
     if ($search) {
+        // get the data from the database according to the search input
         $query = 'SELECT * FROM touristic_places WHERE name LIKE :name';
         $statement = $conn->prepare($query);
         $statement->bindValue(':name', "%$search%");
         $statement->execute();
         $places = $statement->fetchAll(PDO::FETCH_ASSOC);
     } else {
+        // get the data from the database 
         $query = "SELECT * FROM touristic_places";
         $statement = $conn->prepare($query);
         $statement->execute();
@@ -170,6 +172,12 @@ try {
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="reservations.php" aria-expanded="false">
+                                        <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                        <span class="hide-menu">Reservations</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.php" aria-expanded="false">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
                                         <span class="hide-menu">Comments</span>
@@ -177,7 +185,7 @@ try {
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="msg.php" aria-expanded="false">
-                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                        <i class="fas fa-comment-alt" aria-hidden="true"></i>
                                         <span class="hide-menu">Messages</span>
                                     </a>
                                 </li>
@@ -221,6 +229,7 @@ try {
                     <!-- End Bread crumb and right sidebar toggle -->
                     <!-- ============================================================== -->
 
+                    <!-- start success msg -->
                     <?php
                     if (isset($_SESSION['status1'])) { ?>
                         <div class="alert alert-success" role="alert">
@@ -248,12 +257,14 @@ try {
                             ?>
                         </div>
                     <?php } ?>
+                    <!-- end msg -->
                     <!-- ============================================================== -->
                     <!-- Container fluid  -->
                     <!-- ============================================================== -->
                     <div class="container-fluid text-center">
                         <!-- ============================================================== -->
                         <!-- Start Page Content -->
+                        <!-- start places table -->
                         <!-- ============================================================== -->
                         <div class="row">
                             <div class="col-sm-12">
@@ -299,51 +310,7 @@ try {
                                                         </td>
                                                     </tr>
                                                 <?php } ?>
-                                                <!-- <tr>
-                                                <td>2</td>
-                                                <td>Marina Plaza Hotel Tala Bay </td>
-                                                <td>
-                                                    <img src="../pages/images/home/irbid.jpg" alt="Card image cap" width="50rem" height="50rem">
-                                                </td>
-                                                <td class="text-wrap">Tala Bay is planned to be fully self-sufficient from
-                                                    an infrastructure point of view, providing a diverse range...</td>
-                                                <td>Aqaba</td>
-                                                <td><a href="https://goo.gl/maps/FbTV9nNqxffF8XyQ6" target="_blank" rel="noopener noreferrer">https://goo.gl/maps/FbTV9nNqxffF8XyQ6</a>
-                                                </td>
-                                                <td>
-                                                    <form method="post" action="" class="d-inline">
-                                                        <input name="_method" type="hidden" value="DELETE">
-                                                        <button type="submit" class="btn btn-success btn-flat show_confirm" data-toggle="tooltip" title='Edit'>Edit</button>
-                                                    </form>
-                                                    <form method="post" action="" class="d-inline">
-                                                        <input name="_method" type="hidden" value="DELETE">
-                                                        <button type="submit" class="btn btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Kempinski Hotel Amman</td>
-                                                <td>
-                                                    <img src="../pages/images/home/maan.jfif" alt="Card image cap" width="50rem" height="50rem">
-                                                </td>
-                                                <td class="text-wrap">This hotel is located in Shmeisani, Amman’s central
-                                                    business district. It features a 24-hour gym, ...</td>
-                                                <td>Amman</td>
-                                                <td><a href="https://g.page/KempinskiAmman?share" target="_blank" rel="noopener noreferrer">https://g.page/KempinskiAmman?share</a>
-                                                </td>
-                                                <td>
-                                                    <form method="post" action="" class="d-inline">
-                                                        <input name="_method" type="hidden" value="DELETE">
-                                                        <button type="submit" class="btn btn-success btn-flat show_confirm" data-toggle="tooltip" title='Edit'>Edit</button>
-                                                    </form>
-                                                    <form method="post" action="" class="d-inline">
-                                                        <input name="_method" type="hidden" value="DELETE">
-                                                        <button type="submit" class="btn btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
-                                                    </form>
-                                                </td>
-                                            </tr> -->
-
+                                               
                                             </tbody>
                                         </table>
                                     </div>
@@ -352,6 +319,7 @@ try {
                         </div>
                         <!-- ============================================================== -->
                         <!-- End PAge Content -->
+                        <!-- end places table -->
                         <!-- ============================================================== -->
                         <!-- ============================================================== -->
                         <!-- Right sidebar -->
@@ -396,6 +364,8 @@ try {
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
+
+            <!-- sweet alert to confirm delete place -->
             <script type="text/javascript">
                 $('.show_confirm').click(function(event) {
                     var form = $(this).closest("form");
@@ -423,9 +393,11 @@ try {
 
 <?php
     } else {
+        // back to login page if not logged in
         header("location:login.php");
     }
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

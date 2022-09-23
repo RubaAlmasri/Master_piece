@@ -14,6 +14,7 @@ try {
     $_SESSION['status3']='Category Deleted Successfully ';
     header('location:categories.php');
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

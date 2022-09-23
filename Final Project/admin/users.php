@@ -8,12 +8,14 @@ try {
 
     $search = $_GET['search'] ?? '';
     if ($search) {
+        // get the data from the database according to the search input
         $query = 'SELECT * FROM users WHERE user_name LIKE :name';
         $statement = $conn->prepare($query);
         $statement->bindValue(':name', "%$search%");
         $statement->execute();
         $users = $statement->fetchAll(PDO::FETCH_ASSOC);
     } else {
+        // get the data from the database
         $query = "SELECT * FROM users";
         $statement = $conn->prepare($query);
         $statement->execute();
@@ -174,6 +176,12 @@ try {
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="reservations.php" aria-expanded="false">
+                                        <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                        <span class="hide-menu">Reservations</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.php" aria-expanded="false">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
                                         <span class="hide-menu">Comments</span>
@@ -181,7 +189,7 @@ try {
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="msg.php" aria-expanded="false">
-                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                        <i class="fas fa-comment-alt" aria-hidden="true"></i>
                                         <span class="hide-menu">Messages</span>
                                     </a>
                                 </li>
@@ -251,6 +259,7 @@ try {
                     <div class="container-fluid text-center">
                         <!-- ============================================================== -->
                         <!-- Start Page Content -->
+                        <!-- start users table -->
                         <!-- ============================================================== -->
                         <div class="row">
                             <div class="col-sm-12">
@@ -290,6 +299,7 @@ try {
                         </div>
                         <!-- ============================================================== -->
                         <!-- End PAge Content -->
+                        <!-- end users table -->
                         <!-- ============================================================== -->
                         <!-- ============================================================== -->
                         <!-- Right sidebar -->
@@ -334,6 +344,8 @@ try {
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
+
+            <!-- sweet alert to confirm delete user -->
             <script type="text/javascript">
                 $('.show_confirm').click(function(event) {
                     var form = $(this).closest("form");
@@ -359,9 +371,11 @@ try {
 
 <?php
     } else {
+        // back to login page if not logged in
         header("location:login.php");
     }
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

@@ -12,7 +12,7 @@ try {
 
     // echo error message 
 } catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
     header('location:404.html');
+    echo "Connection failed: " . $e->getMessage();
 
 }

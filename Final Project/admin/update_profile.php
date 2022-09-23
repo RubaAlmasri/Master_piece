@@ -22,6 +22,7 @@ try {
     $_SESSION['status2'] = 'Profile Updated Successfully';
     header('location:profile.php');
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

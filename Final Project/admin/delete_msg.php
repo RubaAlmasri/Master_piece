@@ -15,6 +15,7 @@ try {
     $_SESSION['status3'] = 'Message Deleted Successfully';
     header('location:msg.php');
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

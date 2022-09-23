@@ -28,6 +28,7 @@ try {
     $_SESSION['status1']='User Added Successfully ';
     header('location:users.php');
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

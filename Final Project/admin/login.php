@@ -43,6 +43,7 @@ try {
             <div class="container-fluid">
 
 
+            <!-- start login form -->
                 <section class="vh-100 gradient-custom">
                     <div class="container py-5 h-100">
                         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -66,11 +67,11 @@ try {
                                             <form action="check_admin.php" method="POST">
                                                 <div class="form-outline form-white mb-4" style="text-align: left;">
                                                     <label for="login-email">Email: <span style="color: red;">*</span></label>
-                                                    <input name="login-email" type="email" id="login-email" class="form-control form-control-lg" required />
+                                                    <input name="login-email" type="email" id="login-email" class="form-control form-control-lg" title="Please fill out your email" required />
                                                 </div>
                                                 <div class="form-outline form-white mb-4" style="text-align: left;">
                                                     <label for="login-password">Password: <span style="color: red;">*</span></label>
-                                                    <input name="login-password" type="password" id="login-password" class="form-control form-control-lg" required />
+                                                    <input name="login-password" type="password" id="login-password" class="form-control form-control-lg" title="Please fill out your password" required />
                                                 </div>
                                                 <button type="submit" name="login" value="send" class="btn btn-primary">Login</button>
                                             </form>
@@ -84,6 +85,7 @@ try {
                     </div>
                 </section>
 
+                <!-- end login form -->
             </div>
 
         </div>
@@ -106,6 +108,7 @@ try {
 <?php
 
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

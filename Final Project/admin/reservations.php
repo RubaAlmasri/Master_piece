@@ -1,29 +1,29 @@
 <?php
 include_once '../pages/connect/connect.php';
 session_start();
+
 $id = $_SESSION["admin_id"] ?? null;
 
 try {
     $search = $_GET['search'] ?? '';
     if ($search) {
         // get the data from the database according to the search input
-        $query = 'SELECT * FROM categories WHERE category_name LIKE :name';
+        $query = 'SELECT * FROM  hotels_reservations WHERE hotel_name LIKE :h_name';
         $statement = $conn->prepare($query);
-        $statement->bindValue(':name', "%$search%");
+        $statement->bindValue(':h_name', "%$search%");
         $statement->execute();
-        $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $reservations = $statement->fetchAll(PDO::FETCH_ASSOC);
     } else {
-        // get the data from the database 
-        $query = "SELECT * FROM categories";
+        // get the data from the database
+        $query = "SELECT * FROM hotels_reservations";
         $statement = $conn->prepare($query);
         $statement->execute();
-        $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $reservations = $statement->fetchAll(PDO::FETCH_ASSOC);
     }
-
-
 
     if ($id) {
 ?>
+
 
 
 
@@ -38,17 +38,13 @@ try {
             <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
             <meta name="description" content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
             <meta name="robots" content="noindex,nofollow">
-            <title>Categories</title>
+            <title>Reservations</title>
             <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
             <!-- Favicon icon -->
             <link rel="shortcut icon" type="image/x-icon" href="../pages/images/Untitled design.png" />
             <!-- Custom CSS -->
             <link href="css/style.min.css" rel="stylesheet">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-
-
             <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
             <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
             <!--[if lt IE 9]>
@@ -103,8 +99,8 @@ try {
                                 <!-- Search -->
                                 <!-- ============================================================== -->
                                 <li class=" in">
-                                    <form role="search" method="get" class="app-search d-none d-md-block me-3">
-                                        <input type="text" placeholder="Search..." name="search" class="form-control mt-0" value="<?php echo $search; ?>">
+                                    <form role="search" class="app-search d-none d-md-block me-3">
+                                        <input type="text" placeholder="Search..." name="search" class="form-control mt-0">
                                         <a href="" class="active">
                                             <i class="fa fa-search"></i>
                                         </a>
@@ -214,14 +210,13 @@ try {
                     <div class="page-breadcrumb bg-white">
                         <div class="row align-items-center">
                             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                                <h4 class="page-title">Categories</h4>
+                                <h4 class="page-title">Reservations</h4>
                             </div>
                             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                                 <div class="d-md-flex">
                                     <ol class="breadcrumb ms-auto">
                                         <li><a href="dashboard.php" class="fw-normal">Dashboard</a></li>
                                     </ol>
-                                    <a href="../admin/add_category.php" class="btn btn-primary d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add Category</a>
                                 </div>
                             </div>
                         </div>
@@ -230,21 +225,9 @@ try {
                     <!-- ============================================================== -->
                     <!-- End Bread crumb and right sidebar toggle -->
                     <!-- ============================================================== -->
-
-
                     <!-- start success msg -->
                     <?php
-                    if (isset($_SESSION['status2'])) { ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php
-                            echo $_SESSION['status2'];
-                            unset($_SESSION['status2']);
-                            ?>
-                        </div>
-                    <?php
-                    }
-                    if (isset($_SESSION['status3'])) {
-                    ?>
+                    if (isset($_SESSION['status3'])) { ?>
                         <div class="alert alert-success" role="alert">
                             <?php
                             echo $_SESSION['status3'];
@@ -252,14 +235,14 @@ try {
                             ?>
                         </div>
                     <?php } ?>
-                    <!-- End success msg -->
+                    <!-- end success msg -->
                     <!-- ============================================================== -->
                     <!-- Container fluid  -->
                     <!-- ============================================================== -->
                     <div class="container-fluid text-center">
                         <!-- ============================================================== -->
                         <!-- Start Page Content -->
-                        <!-- start category table -->
+                        <!-- start msg table -->
                         <!-- ============================================================== -->
                         <div class="row">
                             <div class="col-sm-12">
@@ -268,50 +251,56 @@ try {
                                         <table class="table text-nowrap">
                                             <thead class="bg-dark">
                                                 <tr>
-                                                    <th class="border-top-0 text-white">ID</th>
-                                                    <th class="border-top-0 text-white">Name</th>
-                                                    <th class="border-top-0 text-white">About</th>
-                                                    <th class="border-top-0 text-white">Image</th>
-                                                    <th class="border-top-0 text-white">Actions</th>
+                                                    <th class="border-top-0 text-white">User name</th>
+                                                    <th class="border-top-0 text-white">User Phone</th>
+                                                    <th class="border-top-0 text-white">Hotel Name</th>
+                                                    <th class="border-top-0 text-white">No. rooms</th>
+                                                    <th class="border-top-0 text-white">Adults/Room</th>
+                                                    <th class="border-top-0 text-white">Childs/Room</th>
+                                                    <th class="border-top-0 text-white">Check-in - Check-out</th>
+                                                    <th class="border-top-0 text-white">Reservation status</th>
+                                                    <!-- <th class="border-top-0 text-white">Actions</th> -->
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php foreach ($categories as $i) { ?>
-
+                                                <?php foreach ($reservations as $i) { ?>
                                                     <tr>
-                                                        <td><?php echo $i['category_id']; ?></td>
-                                                        <td><?php echo $i["category_name"]; ?></td>
-                                                        <td class="text-truncate" style="max-width: 150px;"><?php echo $i['category_about']; ?></td>
-                                                        <td>
-                                                            <img src="images/<?php echo $i['category_img']; ?>" alt="image" width="50rem" height="50rem">
-                                                        </td>
-                                                        <td>
-                                                            <form method="get" action="edit.php" class="d-inline">
-                                                                <input type="hidden" value="<?php echo $i['category_id']; ?>" name="id">
-                                                                <button type="submit" class="btn btn-success btn-flat" data-toggle="tooltip" title='Edit'>Edit</button>
-                                                            </form>
-                                                            <form method="get" action="delete_category.php" class="d-inline">
-                                                                <input type="hidden" value="<?php echo $i['category_id']; ?>" name="id">
+
+                                                        <td><?php echo $i["user_name"] ?></td>
+                                                        <td><?php echo $i["user_phone"] ?></td>
+                                                        <td><?php echo $i["hotel_name"] ?></td>
+                                                        <td><?php echo $i["no_rooms"] ?></td>
+                                                        <td><?php echo $i["adults_per_room"] ?></td>
+                                                        <td><?php echo $i["child_per_room"] ?></td>
+                                                        <td><?php echo substr($i["check_in"], 0, 10) ?> - <?php echo substr($i["check_out"], 0, 10) ?></td>
+                                                        <td><?php echo $i["status"] ?></td>
+                                                        <!-- <td>
+                                                            <form method="get" action="delete_msg.php" class="d-inline">
+                                                                <input type="hidden" value="<?php echo $i['id']; ?>" name="msg_id">
                                                                 <button type="submit" class="btn btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
                                                             </form>
-                                                        </td>
+                                                        </td> -->
                                                     </tr>
                                                 <?php } ?>
+
+
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- ============================================================== -->
+                        <!-- End PAge Content -->
+                        <!-- end msg table -->
+
                     </div>
                     <!-- ============================================================== -->
                     <!-- End Container fluid  -->
-                    <!-- End category table -->
                     <!-- ============================================================== -->
                     <!-- ============================================================== -->
                     <!-- footer -->
                     <!-- ============================================================== -->
-
                     <footer class="footer text-center">&copy; Copyright 2022. All rights reserved. <a href="../pages/index.php">WONDROUS</a>
                     </footer>
                     <!-- ============================================================== -->
@@ -339,18 +328,18 @@ try {
             <!--Custom JavaScript -->
             <script src="js/custom.js"></script>
 
-
             <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
-            <!-- sweet alert to confirm delete category -->
+
+            <!-- sweet alert to confirm delete msg -->
             <script type="text/javascript">
                 $('.show_confirm').click(function(event) {
                     var form = $(this).closest("form");
                     var name = $(this).data("name");
                     event.preventDefault();
                     swal({
-                            title: `Are you sure you want to delete this category?`,
-                            text: "If you delete this, it will delete everything under this category.",
+                            title: `Are you sure you want to delete this massage?`,
+                            // text: "If you delete this, it will delete everything under this category.",
                             icon: "warning",
                             buttons: true,
                             dangerMode: true,
@@ -362,6 +351,8 @@ try {
                         });
                 });
             </script>
+
+
         </body>
 
         </html>

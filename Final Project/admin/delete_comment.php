@@ -25,6 +25,7 @@ try {
     $_SESSION['status3'] = 'Comment Deleted Successfully';
     header('location:comments.php');
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

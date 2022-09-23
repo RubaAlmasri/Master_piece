@@ -150,9 +150,21 @@ try {
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="reservations.php" aria-expanded="false">
+                                        <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                        <span class="hide-menu">Reservations</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.php" aria-expanded="false">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
                                         <span class="hide-menu">Comments</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="msg.php" aria-expanded="false">
+                                        <i class="fas fa-comment-alt" aria-hidden="true"></i>
+                                        <span class="hide-menu">Messages</span>
                                     </a>
                                 </li>
 
@@ -196,12 +208,7 @@ try {
                     <!-- ============================================================== -->
                     <!-- Container fluid  -->
                     <!-- ============================================================== -->
-                    <!-- Right sidebar -->
-                    <!-- ============================================================== -->
-                    <!-- .right-sidebar -->
-                    <!-- ============================================================== -->
-                    <!-- End Right sidebar -->
-                    <!-- ============================================================== -->
+                   
 
                     <!-- Success message -->
                     <?php
@@ -210,6 +217,14 @@ try {
                             <?php
                             echo $_SESSION['status1'];
                             unset($_SESSION['status1']);
+                            ?>
+                        </div>
+                    <?php
+                    } else if (isset($_SESSION['status2'])) { ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?php
+                            echo $_SESSION['status2'];
+                            unset($_SESSION['status2']);
                             ?>
                         </div>
                     <?php
@@ -223,6 +238,7 @@ try {
                     <div class="container-fluid ">
                         <!-- ============================================================== -->
                         <!-- Start Page Content -->
+                        <!-- Start Categories Form -->
                         <!-- ============================================================== -->
 
                         <section class="gradient-custom">
@@ -257,6 +273,7 @@ try {
 
                         <!-- ============================================================== -->
                         <!-- End PAge Content -->
+                        <!-- End Form -->
                         <!-- ============================================================== -->
                         <!-- ============================================================== -->
 
@@ -300,9 +317,11 @@ try {
 
 <?php
     } else {
+        // back to login page if not logged in 
         header("location:login.php");
     }
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

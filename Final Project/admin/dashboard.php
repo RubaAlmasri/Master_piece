@@ -19,6 +19,7 @@ try {
     $statement->execute();
     $places = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+    // get the last 4 users from users table in the database
     $query = "SELECT * FROM users ORDER BY user_id desc limit 4";
     $statement = $conn->prepare($query);
     $statement->execute();
@@ -87,7 +88,7 @@ try {
                         <!-- ============================================================== -->
                         <!-- End Logo -->
                         <!-- ============================================================== -->
-                        <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                        <div class="navbar-collapse collapse bg-dark" id="navbarSupportedContent" data-navbarbg="skin5">
                             <!-- ============================================================== -->
                             <!-- Right side toggle and nav items -->
                             <!-- ============================================================== -->
@@ -105,7 +106,7 @@ try {
                                     </form>
                                 </li> -->
                                 <!-- ============================================================== -->
-                                <!-- User profile and search -->
+                                <!-- User profile -->
                                 <!-- ============================================================== -->
                                 <li>
                                     <a class="profile-pic" href="profile.php">
@@ -116,19 +117,10 @@ try {
                                     </a>
 
                                 </li>
-                                <!-- <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:1.0rem ;"><b>Hello</b> <?php echo $_SESSION['admin_name']; ?><i class="tf-ion-chevron-down"></i></a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                                        <li><a class="dropdown-item" href="profile.php">Profile</a></li>
-                                        <li><a class="dropdown-item" href="logout.php">Logout</a></li>
-
-                                    </ul>
-                                </li> -->
                                 
 
                                 <!-- ============================================================== -->
-                                <!-- User profile and search -->
+                                <!-- User profile -->
                                 <!-- ============================================================== -->
                             </ul>
                         </div>
@@ -185,6 +177,12 @@ try {
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="reservations.php" aria-expanded="false">
+                                        <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                        <span class="hide-menu">Reservations</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.php" aria-expanded="false">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
                                         <span class="hide-menu">Comments</span>
@@ -192,10 +190,11 @@ try {
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="msg.php" aria-expanded="false">
-                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                        <i class="fas fa-comment-alt" aria-hidden="true"></i>
                                         <span class="hide-menu">Messages</span>
                                     </a>
                                 </li>
+                               
 
 
                             </ul>
@@ -239,7 +238,7 @@ try {
                     <!-- ============================================================== -->
                     <div class="container-fluid">
                         <!-- ============================================================== -->
-                        <!-- Three charts -->
+                        <!-- number of users, hotels and places in the database -->
                         <!-- ============================================================== -->
                         <div class="row justify-content-center">
                             <div class="col-lg-4 col-md-12">
@@ -282,46 +281,15 @@ try {
                             </div>
                         </div>
                         <!-- ============================================================== -->
-                        <!-- PRODUCTS YEARLY SALES -->
                         <!-- ============================================================== -->
-                        <!-- <div class="row">
-                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                <div class="white-box">
-                                    <h3 class="box-title">Products Yearly Sales</h3>
-                                    <div class="d-md-flex">
-                                        <ul class="list-inline d-flex ms-auto">
-                                            <li class="ps-3">
-                                                <h5><i class="fa fa-circle me-1 text-info"></i>Mac</h5>
-                                            </li>
-                                            <li class="ps-3">
-                                                <h5><i class="fa fa-circle me-1 text-inverse"></i>Windows</h5>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div id="ct-visits" style="height: 405px;">
-                                        <div class="chartist-tooltip" style="top: -17px; left: -12px;"><span class="chartist-tooltip-value">6</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- ============================================================== -->
-                        <!-- RECENT users -->
+
+                        <!-- start RECENT users -->
                         <!-- ============================================================== -->
                         <div class="row">
                             <div class="col-md-12 col-lg-12 col-sm-12">
                                 <div class="white-box">
                                     <div class="d-md-flex mb-3">
                                         <h3 class="box-title mb-0">Recent users</h3>
-                                        <!-- <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
-                                            <select class="form-select shadow-none row border-top">
-                                                <option>March 2021</option>
-                                                <option>April 2021</option>
-                                                <option>May 2021</option>
-                                                <option>June 2021</option>
-                                                <option>July 2021</option>
-                                            </select>
-                                        </div> -->
                                     </div>
                                     <div class="table-responsive text-center">
                                         <table class="table no-wrap">
@@ -349,167 +317,9 @@ try {
                             </div>
                         </div>
                         <!-- ============================================================== -->
-                        <!-- Recent Comments -->
+                        <!-- end the recent users table -->
                         <!-- ============================================================== -->
-                        <div class="row">
-                            <!-- .col -->
-                            <!-- <div class="col-md-12 col-lg-12 col-sm-12">
-                                <div class="card white-box p-0">
-                                    <div class="card-body">
-                                        <h3 class="box-title mb-0">Recent Comments</h3>
-                                    </div>
-                                    <div class="comment-widgets">
-                                        <div class="d-flex flex-row comment-row p-3 mt-0">
-                                            <div class="p-2"><img src="plugins/images/users/varun.jpg" alt="user" width="50" class="rounded-circle"></div>
-                                            <div class="comment-text ps-2 ps-md-3 w-100">
-                                                <h5 class="font-medium">James Anderson</h5>
-                                                <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry.It has survived not only five centuries. </span>
-                                                <div class="comment-footer d-md-flex align-items-center">
-                                                    <span class="badge bg-primary rounded">Pending</span>
-
-                                                    <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">April 14, 2021</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex flex-row comment-row p-3">
-                                            <div class="p-2"><img src="plugins/images/users/genu.jpg" alt="user" width="50" class="rounded-circle"></div>
-                                            <div class="comment-text ps-2 ps-md-3 active w-100">
-                                                <h5 class="font-medium">Michael Jorden</h5>
-                                                <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry.It has survived not only five centuries. </span>
-                                                <div class="comment-footer d-md-flex align-items-center">
-
-                                                    <span class="badge bg-success rounded">Approved</span>
-
-                                                    <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">April 14, 2021</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex flex-row comment-row p-3">
-                                            <div class="p-2"><img src="plugins/images/users/ritesh.jpg" alt="user" width="50" class="rounded-circle"></div>
-                                            <div class="comment-text ps-2 ps-md-3 w-100">
-                                                <h5 class="font-medium">Johnathan Doeting</h5>
-                                                <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry.It has survived not only five centuries. </span>
-                                                <div class="comment-footer d-md-flex align-items-center">
-
-                                                    <span class="badge rounded bg-danger">Rejected</span>
-
-                                                    <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">April 14, 2021</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- <div class="col-lg-4 col-md-12 col-sm-12">
-                                <div class="card white-box p-0">
-                                    <div class="card-heading">
-                                        <h3 class="box-title mb-0">Chat Listing</h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <ul class="chatonline">
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success text-white btn-circle btn" type="button">
-                                                        <i class="fas fa-phone"></i>
-                                                    </button>
-                                                    <button class="btn btn-info btn-circle btn" type="button">
-                                                        <i class="far fa-comments text-white"></i>
-                                                    </button>
-                                                </div>
-                                                <a href="javascript:void(0)" class="d-flex align-items-center"><img src="plugins/images/users/varun.jpg" alt="user-img" class="img-circle">
-                                                    <div class="ms-2">
-                                                        <span class="text-dark">Varun Dhavan <small class="d-block text-success d-block">online</small></span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success text-white btn-circle btn" type="button">
-                                                        <i class="fas fa-phone"></i>
-                                                    </button>
-                                                    <button class="btn btn-info btn-circle btn" type="button">
-                                                        <i class="far fa-comments text-white"></i>
-                                                    </button>
-                                                </div>
-                                                <a href="javascript:void(0)" class="d-flex align-items-center"><img src="plugins/images/users/genu.jpg" alt="user-img" class="img-circle">
-                                                    <div class="ms-2">
-                                                        <span class="text-dark">Genelia
-                                                            Deshmukh <small class="d-block text-warning">Away</small></span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success text-white btn-circle btn" type="button">
-                                                        <i class="fas fa-phone"></i>
-                                                    </button>
-                                                    <button class="btn btn-info btn-circle btn" type="button">
-                                                        <i class="far fa-comments text-white"></i>
-                                                    </button>
-                                                </div>
-                                                <a href="javascript:void(0)" class="d-flex align-items-center"><img src="plugins/images/users/ritesh.jpg" alt="user-img" class="img-circle">
-                                                    <div class="ms-2">
-                                                        <span class="text-dark">Ritesh
-                                                            Deshmukh <small class="d-block text-danger">Busy</small></span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success text-white btn-circle btn" type="button">
-                                                        <i class="fas fa-phone"></i>
-                                                    </button>
-                                                    <button class="btn btn-info btn-circle btn" type="button">
-                                                        <i class="far fa-comments text-white"></i>
-                                                    </button>
-                                                </div>
-                                                <a href="javascript:void(0)" class="d-flex align-items-center"><img src="plugins/images/users/arijit.jpg" alt="user-img" class="img-circle">
-                                                    <div class="ms-2">
-                                                        <span class="text-dark">Arijit
-                                                            Sinh <small class="d-block text-muted">Offline</small></span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success text-white btn-circle btn" type="button">
-                                                        <i class="fas fa-phone"></i>
-                                                    </button>
-                                                    <button class="btn btn-info btn-circle btn" type="button">
-                                                        <i class="far fa-comments text-white"></i>
-                                                    </button>
-                                                </div>
-                                                <a href="javascript:void(0)" class="d-flex align-items-center"><img src="plugins/images/users/govinda.jpg" alt="user-img" class="img-circle">
-                                                    <div class="ms-2">
-                                                        <span class="text-dark">Govinda
-                                                            Star <small class="d-block text-success">online</small></span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <div class="call-chat">
-                                                    <button class="btn btn-success text-white btn-circle btn" type="button">
-                                                        <i class="fas fa-phone"></i>
-                                                    </button>
-                                                    <button class="btn btn-info btn-circle btn" type="button">
-                                                        <i class="far fa-comments text-white"></i>
-                                                    </button>
-                                                </div>
-                                                <a href="javascript:void(0)" class="d-flex align-items-center"><img src="plugins/images/users/hritik.jpg" alt="user-img" class="img-circle">
-                                                    <div class="ms-2">
-                                                        <span class="text-dark">John
-                                                            Abraham<small class="d-block text-success">online</small></span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- /.col -->
-                        </div>
+                        
                     </div>
                     <!-- ============================================================== -->
                     <!-- End Container fluid  -->
@@ -556,9 +366,11 @@ try {
 
 <?php
     } else {
+        // back to login page if not logged in
         header("location:login.php");
     }
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

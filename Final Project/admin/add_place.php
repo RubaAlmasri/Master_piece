@@ -153,9 +153,21 @@ try {
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="reservations.php" aria-expanded="false">
+                                        <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                        <span class="hide-menu">Reservations</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.php" aria-expanded="false">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
                                         <span class="hide-menu">Comments</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="msg.php" aria-expanded="false">
+                                        <i class="fas fa-comment-alt" aria-hidden="true"></i>
+                                        <span class="hide-menu">Messages</span>
                                     </a>
                                 </li>
 
@@ -234,6 +246,7 @@ try {
                     <div class="container-fluid ">
                         <!-- ============================================================== -->
                         <!-- Start Page Content -->
+                        <!-- start form -->
                         <!-- ============================================================== -->
 
                         <section class="gradient-custom">
@@ -291,8 +304,9 @@ try {
                                                         </div>
 
                                                         <button type="submit" value="save" class="btn btn-primary mt-3">Save</button>
+                                                    </form>
                                                 </div>
-                                                </form>
+
                                             </div>
                                         </div>
                                     </div>
@@ -302,6 +316,7 @@ try {
 
                         <!-- ============================================================== -->
                         <!-- End PAge Content -->
+                        <!-- End form -->
                         <!-- ============================================================== -->
                         <!-- ============================================================== -->
 
@@ -345,9 +360,11 @@ try {
 
 <?php
     } else {
+        // back to login page if not logged in
         header("location:login.php");
     }
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

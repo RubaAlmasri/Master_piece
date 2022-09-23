@@ -8,6 +8,7 @@ try {
 
     if ($id) {
 
+        // get admin info from the database 
         $query = "SELECT * FROM users WHERE user_id=:id";
         $statement = $conn->prepare($query);
         $statement->execute(
@@ -78,7 +79,7 @@ try {
                         <!-- ============================================================== -->
                         <!-- End Logo -->
                         <!-- ============================================================== -->
-                        <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                        <div class="navbar-collapse collapse bg-dark" id="navbarSupportedContent" data-navbarbg="skin5">
                             <ul class="navbar-nav d-none d-md-block d-lg-none">
                                 <li class="nav-item">
                                     <a class="nav-toggler nav-link waves-effect waves-light text-white" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
@@ -158,6 +159,12 @@ try {
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="reservations.php" aria-expanded="false">
+                                        <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                        <span class="hide-menu">Reservations</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comments.php" aria-expanded="false">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
                                         <span class="hide-menu">Comments</span>
@@ -165,7 +172,7 @@ try {
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="msg.php" aria-expanded="false">
-                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                        <i class="fas fa-comment-alt" aria-hidden="true"></i>
                                         <span class="hide-menu">Messages</span>
                                     </a>
                                 </li>
@@ -224,6 +231,7 @@ try {
                     <div class="container-fluid">
                         <!-- ============================================================== -->
                         <!-- Start Page Content -->
+                        <!-- start admin profile -->
                         <!-- ============================================================== -->
                         <!-- Row -->
                         <div class="row">
@@ -232,10 +240,13 @@ try {
                                 <!-- Column -->
                                 <div class="col-lg-4 col-xlg-3 col-md-12">
                                     <div class="white-box">
-                                        <div class="user-bg"> <img width="100%" alt="user" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                        <div class="user-bg">
+                                            <img width="100%" alt="user" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png">
                                             <div class="overlay-box">
                                                 <div class="user-content">
-                                                    <a href="javascript:void(0)"><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="thumb-lg img-circle" alt="img"></a>
+                                                    <a href="javascript:void(0)">
+                                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="thumb-lg img-circle" alt="img">
+                                                    </a>
                                                     <h4 class="text-white mt-2"><?php echo $i['user_name']; ?></h4>
                                                     <h5 class="text-white mt-2"><?php echo $i['user_email']; ?></h5>
                                                 </div>
@@ -293,13 +304,8 @@ try {
                         <!-- ============================================================== -->
                         <!-- End PAge Content -->
                         <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- Right sidebar -->
-                        <!-- ============================================================== -->
-                        <!-- .right-sidebar -->
-                        <!-- ============================================================== -->
-                        <!-- End Right sidebar -->
-                        <!-- ============================================================== -->
+                       
+                        
                     </div>
                     <!-- ============================================================== -->
                     <!-- End Container fluid  -->
@@ -342,9 +348,11 @@ try {
 
 <?php
     } else {
+        // back to login page if not logged in
         header("location:login.php");
     }
 } catch (PDOException $e) {
+    header("location:404.html");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;

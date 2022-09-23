@@ -30,6 +30,7 @@ try {
         }
     
 } catch (PDOException $e) {
+    header("location:login.php");
     echo $query . "<br>" . $e->getMessage();
 } finally {
     $conn = NULL;
